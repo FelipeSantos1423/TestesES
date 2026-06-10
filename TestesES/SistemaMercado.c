@@ -27,8 +27,27 @@ completo.
 
 ====================================================
 */
+#include <stdio.h>
 
-int cadastrarProduto(char nome[], int quantidade)
+/*caso de teste 1 - Henrique*/
+int produtoVencido()
 {
     return 1;
 }
+/*caso de teste 2 - Henrique*/
+int produtoProximoVencimento()
+{
+    return 2;
+}
+/*caso de teste 3 - Henrique*/
+int produtoDentroValidade()
+{
+    return 3;
+}
+
+int cadastrarProduto(char nome[], int quantidade)
+{
+    return 0;
+}
+
+
