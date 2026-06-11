@@ -102,13 +102,14 @@ MU_TEST(test_produto_dentro_validade)
 /*****************************************************************/
 
 /*Caso 1 - Felipe*/
-int cadastrarProduto(char nome[], int quantidade);
+int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int cod_pdt);
 int cadastrarProdutoSemNome(char nome[]);
+int cadastrarProdutoQuantidadeNegativa(int quantidade);
 
 MU_TEST(test_cadastrar_produto_valido)
 {
     mu_assert(
-        cadastrarProduto("Arroz", 10) == 0,
+        cadastrarProduto("Arroz", 10, "", 12.90, 10) == 0,
         "Erro ao cadastrar produto valido"
     );
 }
@@ -117,8 +118,17 @@ MU_TEST(test_cadastrar_produto_valido)
 MU_TEST(test_cadastrar_produto_nome_vazio)
 {
     mu_assert(
-        cadastrarProdutoSemNome("") == 1,
+        cadastrarProdutoSemNome("") == 0,
         "Produto com nome preenchido. Teste mal sucedido (nome deve estar vazio)"
+    );
+}
+
+/*Caso 3 - Felipe*/
+MU_TEST(test_cadastrar_produto_quantidade_negativa)
+{
+    mu_assert(
+        cadastrarProdutoQuantidadeNegativa(-5) == 0,
+        "Produto com quantidade positiva preenchido. Teste mal sucedido (quantidade deve estar negativa)"
     );
 }
 
@@ -126,6 +136,7 @@ MU_TEST_SUITE(test_suite)
 {
     MU_RUN_TEST(test_cadastrar_produto_valido);
     MU_RUN_TEST(test_cadastrar_produto_nome_vazio);
+    MU_RUN_TEST(test_cadastrar_produto_quantidade_negativa);
     
     MU_RUN_TEST(test_produto_vencido);
 	MU_RUN_TEST(test_produto_proximo_vencimento);

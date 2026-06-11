@@ -28,6 +28,14 @@ completo.
 ====================================================
 */
 
+/**
+* @brief Sistema para Mercado 
+*
+* @details Este arquivo contém funções básicas para realizar teste de cadastro, verificação
+* @author Felipe
+* @ date 2026
+* @version 1.5.0
+*/
 #include <stdio.h>
 
 /*caso de teste 1 - Henrique*/
@@ -60,7 +68,7 @@ int produtoDentroValidade()
  * @return int Retorna 0 indicando produto cadastrado com sucesso.
  */
 /*caso de teste 1 - Felipe*/
-int cadastrarProduto(char nome[], int quantidade)
+int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int cod_pdt)
 {
     return 0;
 }
