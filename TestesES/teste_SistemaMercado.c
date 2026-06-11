@@ -101,8 +101,9 @@ MU_TEST(test_produto_dentro_validade)
 
 /*****************************************************************/
 
-/* Função que está no SistemaMercado.c */
+/*Caso 1 - Felipe*/
 int cadastrarProduto(char nome[], int quantidade);
+int cadastrarProdutoSemNome(char nome[]);
 
 MU_TEST(test_cadastrar_produto_valido)
 {
@@ -112,9 +113,19 @@ MU_TEST(test_cadastrar_produto_valido)
     );
 }
 
+/*Caso 2 - Felipe*/
+MU_TEST(test_cadastrar_produto_nome_vazio)
+{
+    mu_assert(
+        cadastrarProdutoSemNome("") == 1,
+        "Produto com nome preenchido. Teste mal sucedido (nome deve estar vazio)"
+    );
+}
+
 MU_TEST_SUITE(test_suite)
 {
     MU_RUN_TEST(test_cadastrar_produto_valido);
+    MU_RUN_TEST(test_cadastrar_produto_nome_vazio);
     
     MU_RUN_TEST(test_produto_vencido);
 	MU_RUN_TEST(test_produto_proximo_vencimento);
