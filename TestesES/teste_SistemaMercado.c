@@ -45,6 +45,7 @@ o teste falha e uma mensagem de erro é exibida.
 /* Funções que estão no SistemaMercado.c */
 int produtoVencido();
 int produtoProximoVencimento();
+int produtoDentroValidade();
 
 /*Caso 1 - Henrique*/
 
@@ -81,6 +82,22 @@ MU_TEST(test_produto_proximo_vencimento)
     );
 }
 
+/*Caso 3 - Henrique*/
+/**
+ * @brief Verifica se um produto está dentro da validade.
+ *
+ * Esta função simula a validação de um produto que ainda
+ * pode ser comercializado normalmente.
+ *
+ * @return int Retorna 2 indicando produto dentro da validade.
+ */
+MU_TEST(test_produto_dentro_validade)
+{
+    mu_assert_int_eq(
+        3,
+        produtoDentroValidade()
+    );
+}
 
 /*****************************************************************/
 
@@ -101,6 +118,7 @@ MU_TEST_SUITE(test_suite)
     
     MU_RUN_TEST(test_produto_vencido);
 	MU_RUN_TEST(test_produto_proximo_vencimento);
+	MU_RUN_TEST(test_produto_dentro_validade);
 }
 
 int main()

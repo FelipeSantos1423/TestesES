@@ -41,6 +41,12 @@ int produtoProximoVencimento()
     return 2;
 }
 
+/*caso de teste 3 - Henrique*/
+int produtoDentroValidade()
+{
+    return 3;
+}
+
 int cadastrarProduto(char nome[], int quantidade)
 {
     return 0;
