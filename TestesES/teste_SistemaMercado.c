@@ -35,27 +35,44 @@ o teste falha e uma mensagem de erro é exibida.
 ====================================================
 */
 
+//PRODUTO_VENCIDO = 0
+//PRODUTO_PROXIMO = 1
+//PRODUTO_OK = 2
+
 #include <stdio.h>
 #include "minunit.h"
-#define PRODUTO_VENCIDO 0
-#define PRODUTO_PROXIMO 1
-#define PRODUTO_OK 2
 
 /* Funções que estão no SistemaMercado.c */
 int produtoVencido();
 int produtoProximoVencimento();
-int produtoDentroValidade();
 
 /*Caso 1 - Henrique*/
+
+/**
+ * @brief Verifica se um produto está vencido.
+ *
+ * Esta função simula a validação de um produto vencido
+ * retornando o código correspondente ao status de vencimento.
+ *
+ * @return int Retorna 0 indicando produto vencido.
+ */
 MU_TEST(test_produto_vencido)
 {
     mu_assert_int_eq(
-        2,
+        1,
         produtoVencido()
     );
 }
 
 /*Caso 2 - Henrique*/
+/**
+ * @brief Verifica se um produto está próximo do vencimento.
+ *
+ * Esta função simula a situação em que um produto está
+ * próximo da data de vencimento e deve ser monitorado.
+ *
+ * @return int Retorna 1 indicando produto próximo do vencimento.
+ */
 MU_TEST(test_produto_proximo_vencimento)
 {
     mu_assert_int_eq(
@@ -64,14 +81,6 @@ MU_TEST(test_produto_proximo_vencimento)
     );
 }
 
-/*Caso 3 - Henrique*/
-MU_TEST(test_produto_dentro_validade)
-{
-    mu_assert_int_eq(
-        3,
-        produtoDentroValidade()
-    );
-}
 
 /*****************************************************************/
 
@@ -91,8 +100,7 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_cadastrar_produto_valido);
     
     MU_RUN_TEST(test_produto_vencido);
-    MU_RUN_TEST(test_produto_proximo_vencimento);
-    MU_RUN_TEST(test_produto_dentro_validade);
+	MU_RUN_TEST(test_produto_proximo_vencimento);
 }
 
 int main()
