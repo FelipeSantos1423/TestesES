@@ -27,6 +27,7 @@ completo.
 
 ====================================================
 */
+
 #include <stdio.h>
 
 /*caso de teste 1 - Henrique*/
@@ -72,15 +73,37 @@ int cadastrarProduto(char nome[], int quantidade)
  *
  * @param nome Nome do produto.
  *
- * @return int Retorna 1 indicando nome inválido.
+ * @return int Retorna 0 indicando nome inválido.
  */
- /*caso de teste 1 - Felipe*/
+ /*caso de teste 2 - Felipe*/
 int cadastrarProdutoSemNome(char nome[])
 {
     if(nome[0] == '\0')
     {
-        return 1;
+        return 0;
     }
 
-    return 0;
+    return 1;
 }
+
+/*Caso 3 - Felipe*/
+/**
+ * @brief Verifica se um produto está sendo cadastrado com quantidade inválida.
+ *
+ * Esta função simula o cadastro de um produto com quantidade em estoque negativa.
+ *
+ * @param quantidade Quantidade em estoque do produto.
+ *
+ * @return int Retorna 0 indicando quantidade inválida. 
+ */
+/*Caso de teste 3 - Felipe*/
+int cadastrarProdutoQuantidadeNegativa(int quantidade)
+{
+    if(quantidade < 0)
+    {
+        return 0;
+    }
+
+    return 1;
+}
+
