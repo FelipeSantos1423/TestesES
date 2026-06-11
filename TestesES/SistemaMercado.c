@@ -47,6 +47,15 @@ int produtoDentroValidade()
     return 3;
 }
 
+/*Caso 1 - Felipe*/
+/**
+ * @brief Verifica se um produto está cadastrando corretamento.
+ *
+ * Esta função simula o cadastro de um produto 
+ *
+ * @return int Retorna 0 indicando produto cadastrado com sucesso.
+ */
+/*caso de teste 1 - Felipe*/
 int cadastrarProduto(char nome[], int quantidade)
 {
     return 0;
