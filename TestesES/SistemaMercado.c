@@ -41,8 +41,7 @@ completo.
 #include <string.h>
 
 /*Caso de teste 1 - Henrique*/
-<<<<<<< HEAD
-=======
+
 
 /**
  * @brief Verifica se um produto esta vencido.
@@ -52,22 +51,44 @@ completo.
  *
  * @return int Retorna 1 indicando produto vencido.
  */
->>>>>>> produtoVencido
-int produtoVencido()
+
+int produtoVencido(int diasParaVencer)
 {
-    return 1;
+	if(diasParaVencer <=0){
+		return 1;
+	}   
 }
 
 /*Caso de teste 2 - Henrique*/
-int produtoProximoVencimento()
+/**
+ * @brief Verifica se um produto esta proximo do vencimento.
+ *
+ * Esta funcao simula a situacao em que um produto esta
+ * proximo da data de vencimento e deve ser monitorado.
+ *
+ * @return int Retorna 2 indicando produto proximo do vencimento.
+ */
+int produtoProximoVencimento(int diasParaVencer)
 {
-    return 2;
+    	if(diasParaVencer > 0 && diasParaVencer <=7){
+		return 2;
+	}   
 }
 
 /*Caso de teste 3 - Henrique*/
-int produtoDentroValidade()
+/**
+ * @brief Verifica se um produto esta dentro da validade.
+ *
+ * Esta funcao simula a validacao de um produto que ainda
+ * pode ser comercializado normalmente.
+ *
+ * @return int Retorna 2 indicando produto dentro da validade.
+ */
+int produtoDentroValidade(int diasParaVencer)
 {
-    return 3;
+    	if(diasParaVencer >7){
+		return 3;
+	}   
 }
 
 /*Caso 1 - Felipe*/

@@ -43,16 +43,13 @@ o teste falha e uma mensagem de erro e exibida.
 #include "minunit.h"
 
 /* Funcoes que estao no SistemaMercado.c */
-int produtoVencido();
-int produtoProximoVencimento();
-int produtoDentroValidade();
+int produtoVencido(int diasParaVencer);
+int produtoProximoVencimento(int diasParaVencer);
+int produtoDentroValidade(int diasParaVencer);
 
-<<<<<<< HEAD
-=======
 //PRODUTO_VENCIDO = 1
 //PRODUTO_PROXIMO = 2
 //PRODUTO_OK = 3
->>>>>>> produtoVencido
 
 /*Caso 1 - Henrique*/
 
@@ -68,41 +65,29 @@ MU_TEST(test_produto_vencido)
 {
     mu_assert_int_eq(
         1,
-        produtoVencido()
+        produtoVencido(-2)
     );
 }
 
+//if diasparaVencer ==0 venceu
+//if dias paraVencer <=7 ta pra vencer
+//if >7 ta longe de vencer
+
 /*Caso 2 - Henrique*/
-/**
- * @brief Verifica se um produto esta proximo do vencimento.
- *
- * Esta funcao simula a situacao em que um produto esta
- * proximo da data de vencimento e deve ser monitorado.
- *
- * @return int Retorna 1 indicando produto proximo do vencimento.
- */
 MU_TEST(test_produto_proximo_vencimento)
 {
     mu_assert_int_eq(
         2,
-        produtoProximoVencimento()
+        produtoProximoVencimento(5)
     );
 }
 
 /*Caso 3 - Henrique*/
-/**
- * @brief Verifica se um produto esta dentro da validade.
- *
- * Esta funcao simula a validacao de um produto que ainda
- * pode ser comercializado normalmente.
- *
- * @return int Retorna 2 indicando produto dentro da validade.
- */
 MU_TEST(test_produto_dentro_validade)
 {
     mu_assert_int_eq(
         3,
-        produtoDentroValidade()
+        produtoDentroValidade(8)
     );
 }
 
