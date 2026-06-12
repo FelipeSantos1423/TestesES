@@ -3,25 +3,25 @@
 ARQUIVO: SistemaMercado.c
 ====================================================
 
-Este arquivo cont√©m as fun√ß√µes do sistema de estoque
+Este arquivo contem as funcoes do sistema de estoque
 do supermercado.
 
-Sua responsabilidade √© implementar as regras de neg√≥cio,
+Sua responsabilidade e implementar as regras de negocio,
 como:
 
 - cadastrar produtos;
 - remover produtos;
 - atualizar estoque;
 - buscar produtos;
-- consultar informa√ß√µes.
+- consultar informacoes.
 
-As fun√ß√µes deste arquivo ser√£o utilizadas e validadas
-pelos testes unit√°rios presentes no arquivo
+As funcoes deste arquivo serao utilizadas e validadas
+pelos testes unitarios presentes no arquivo
 teste_SistemaMercado.c.
 
-Durante a fase de testes, algumas fun√ß√µes podem ser
-implementadas como stubs (simula√ß√µes), retornando
-valores pr√©-definidos para permitir a execu√ß√£o dos
+Durante a fase de testes, algumas funcoes podem ser
+implementadas como stubs (simulacoes), retornando
+valores pre-definidos para permitir a execucao dos
 testes sem a necessidade de desenvolver o sistema
 completo.
 
@@ -29,28 +29,30 @@ completo.
 */
 
 /**
-* @brief Sistema para Mercado 
+* @brief Sistema para Mercado
 *
-* @details Este arquivo contÈm funÁıes b·sicas para realizar teste de cadastro, verificaÁ„o
+* @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
 * @author Felipe
-* @ date 2026
+* @date 2026
 * @version 1.6.1
 */
-#include <stdio.h>
 
-/*caso de teste 1 - Henrique*/
+#include <stdio.h>
+#include <string.h>
+
+/*Caso de teste 1 - Henrique*/
 int produtoVencido()
 {
     return 1;
 }
 
-/*caso de teste 2 - Henrique*/
+/*Caso de teste 2 - Henrique*/
 int produtoProximoVencimento()
 {
     return 2;
 }
 
-/*caso de teste 3 - Henrique*/
+/*Caso de teste 3 - Henrique*/
 int produtoDentroValidade()
 {
     return 3;
@@ -58,16 +60,15 @@ int produtoDentroValidade()
 
 /*Caso 1 - Felipe*/
 /**
- * @brief Verifica se um produto est· cadastrando corretamento.
+ * @brief Verifica se um produto esta sendo cadastrado corretamente.
  *
- * Esta funÁ„o simula o cadastro de um produto 
+ * Esta funcao simula o cadastro de um produto.
  *
  * @param nome Nome do produto.
  * @param quantidade Quantidade do produto.
  *
  * @return int Retorna 0 indicando produto cadastrado com sucesso.
  */
-/*caso de teste 1 - Felipe*/
 int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int cod_pdt)
 {
     return 0;
@@ -75,15 +76,14 @@ int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int
 
 /*Caso 2 - Felipe*/
 /**
- * @brief Verifica se um produto est· cadastrando incorretamente.
+ * @brief Verifica se um produto esta sendo cadastrado incorretamente.
  *
- * Esta funÁ„o simula o cadastro de um produto.
+ * Esta funcao simula o cadastro de um produto.
  *
  * @param nome Nome do produto.
  *
- * @return int Retorna 0 indicando nome inv·lido.
+ * @return int Retorna 0 indicando nome invalido.
  */
- /*caso de teste 2 - Felipe*/
 int cadastrarProdutoSemNome(char nome[])
 {
     if(nome[0] == '\0')
@@ -96,15 +96,14 @@ int cadastrarProdutoSemNome(char nome[])
 
 /*Caso 3 - Felipe*/
 /**
- * @brief Verifica se um produto est· sendo cadastrado com quantidade inv·lida.
+ * @brief Verifica se um produto esta sendo cadastrado com quantidade invalida.
  *
- * Esta funÁ„o simula o cadastro de um produto com quantidade em estoque negativa.
+ * Esta funcao simula o cadastro de um produto com quantidade em estoque negativa.
  *
  * @param quantidade Quantidade em estoque do produto.
  *
- * @return int Retorna 0 indicando quantidade inv·lida. 
+ * @return int Retorna 0 indicando quantidade invalida.
  */
-/*Caso de teste 3 - Felipe*/
 int cadastrarProdutoQuantidadeNegativa(int quantidade)
 {
     if(quantidade < 0)
@@ -115,3 +114,18 @@ int cadastrarProdutoQuantidadeNegativa(int quantidade)
     return 1;
 }
 
+/*Caso 1 - Henry*/
+/**
+ * @brief Verifica se o codigo do produto e composto apenas de numeros.
+ *
+ * Esta funcao simula o preenchimento do campo
+ * "codigo do produto" com caracteres invalidos.
+ *
+ * @param codigo Codigo do produto.
+ *
+ * @return Retorna 0 indicando codigo invalido.
+ */
+int validarCodigoProduto(char codigo[])
+{
+    return 0;
+}

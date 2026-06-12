@@ -3,34 +3,34 @@
 ARQUIVO: teste_SistemaMercado.c
 ====================================================
 
-Este arquivo contém os testes unitários do sistema
+Este arquivo contem os testes unitarios do sistema
 de estoque do supermercado utilizando a biblioteca
 MinUnit.
 
 Objetivo:
-Verificar se as funções implementadas em
+Verificar se as funcoes implementadas em
 SistemaMercado.c apresentam o comportamento esperado.
 
-Cada caso de teste representa um cenário de uso,
+Cada caso de teste representa um cenario de uso,
 incluindo:
 
-- cenráios válidos;
-- cenários alternativos;
-- cenários de excessãoo.
+- cenarios validos;
+- cenarios alternativos;
+- cenarios de excecao.
 
-Os testes sÃ£o executados individualmente atravÃ©s
+Os testes sao executados individualmente atraves
 das macros da biblioteca MinUnit.
 
 Exemplo:
 
-- cadastrar produto válido;
-- cadastrar produto com dados inválidos;
+- cadastrar produto valido;
+- cadastrar produto com dados invalidos;
 - remover produto existente;
 - buscar produto inexistente;
 - atualizar estoque.
 
-Caso uma condição esperada não seja satisfeita,
-o teste falha e uma mensagem de erro é exibida.
+Caso uma condicao esperada nao seja satisfeita,
+o teste falha e uma mensagem de erro e exibida.
 
 ====================================================
 */
@@ -42,18 +42,20 @@ o teste falha e uma mensagem de erro é exibida.
 #include <stdio.h>
 #include "minunit.h"
 
-/* Funções que estão no SistemaMercado.c */
+/* Funcoes que estao no SistemaMercado.c */
 int produtoVencido();
 int produtoProximoVencimento();
 int produtoDentroValidade();
+int validarCodigoProduto(char codigo[]);
+
 
 /*Caso 1 - Henrique*/
 
 /**
- * @brief Verifica se um produto está vencido.
+ * @brief Verifica se um produto esta vencido.
  *
- * Esta função simula a validação de um produto vencido
- * retornando o código correspondente ao status de vencimento.
+ * Esta funcao simula a validacao de um produto vencido
+ * retornando o codigo correspondente ao status de vencimento.
  *
  * @return int Retorna 0 indicando produto vencido.
  */
@@ -67,12 +69,12 @@ MU_TEST(test_produto_vencido)
 
 /*Caso 2 - Henrique*/
 /**
- * @brief Verifica se um produto está próximo do vencimento.
+ * @brief Verifica se um produto esta proximo do vencimento.
  *
- * Esta função simula a situação em que um produto está
- * próximo da data de vencimento e deve ser monitorado.
+ * Esta funcao simula a situacao em que um produto esta
+ * proximo da data de vencimento e deve ser monitorado.
  *
- * @return int Retorna 1 indicando produto próximo do vencimento.
+ * @return int Retorna 1 indicando produto proximo do vencimento.
  */
 MU_TEST(test_produto_proximo_vencimento)
 {
@@ -84,9 +86,9 @@ MU_TEST(test_produto_proximo_vencimento)
 
 /*Caso 3 - Henrique*/
 /**
- * @brief Verifica se um produto está dentro da validade.
+ * @brief Verifica se um produto esta dentro da validade.
  *
- * Esta função simula a validação de um produto que ainda
+ * Esta funcao simula a validacao de um produto que ainda
  * pode ser comercializado normalmente.
  *
  * @return int Retorna 2 indicando produto dentro da validade.
@@ -132,15 +134,29 @@ MU_TEST(test_cadastrar_produto_quantidade_negativa)
     );
 }
 
+/*Caso 1 - Henry*/
+MU_TEST(test_codigo_produto_com_letras_e_numeros)
+{
+    char codigo[] = "ABC123";
+
+    int resultado = validarCodigoProduto(codigo);
+
+    mu_assert_int_eq(0, resultado);
+}
+
+
 MU_TEST_SUITE(test_suite)
 {
     MU_RUN_TEST(test_cadastrar_produto_valido);
     MU_RUN_TEST(test_cadastrar_produto_nome_vazio);
     MU_RUN_TEST(test_cadastrar_produto_quantidade_negativa);
-    
+
     MU_RUN_TEST(test_produto_vencido);
-	MU_RUN_TEST(test_produto_proximo_vencimento);
-	MU_RUN_TEST(test_produto_dentro_validade);
+    MU_RUN_TEST(test_produto_proximo_vencimento);
+    MU_RUN_TEST(test_produto_dentro_validade);
+
+    MU_RUN_TEST(test_codigo_produto_com_letras_e_numeros);
+
 }
 
 int main()

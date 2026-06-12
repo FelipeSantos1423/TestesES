@@ -1,0 +1,134 @@
+/*
+====================================================
+ARQUIVO: SistemaMercado.c
+====================================================
+
+Este arquivo contem as funcoes do sistema de estoque
+do supermercado.
+
+Sua responsabilidade de implementar as regras de negocio,
+como:
+
+- cadastrar produtos;
+- remover produtos;
+- atualizar estoque;
+- buscar produtos;
+- consultar informaÃ§Ãµes.
+
+As funcoes deste arquivo serao utilizadas e validadas
+pelos testes unitarios presentes no arquivo
+teste_SistemaMercado.c.
+
+Durante a fase de testes, algumas funcoes podem ser
+implementadas como stubs (simulacoes), retornando
+valores pre-definidos para permitir a execusao dos
+testes sem a necessidade de desenvolver o sistema
+completo.
+
+====================================================
+*/
+
+/**
+* @brief Sistema para Mercado 
+*
+* @details Este arquivo contém funções básicas para realizar teste de cadastro, verificação
+* @author Felipe
+* @ date 2026
+* @version 1.6.1
+*/
+#include <stdio.h>
+#include <string.h>
+
+/*caso de teste 1 - Henrique*/
+int produtoVencido()
+{
+    return 1;
+}
+
+/*caso de teste 2 - Henrique*/
+int produtoProximoVencimento()
+{
+    return 2;
+}
+
+/*caso de teste 3 - Henrique*/
+int produtoDentroValidade()
+{
+    return 3;
+}
+
+/*Caso 1 - Felipe*/
+/**
+ * @brief Verifica se um produto está cadastrando corretamento.
+ *
+ * Esta função simula o cadastro de um produto 
+ *
+ * @param nome Nome do produto.
+ * @param quantidade Quantidade do produto.
+ *
+ * @return int Retorna 0 indicando produto cadastrado com sucesso.
+ */
+/*caso de teste 1 - Felipe*/
+int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int cod_pdt)
+{
+    return 0;
+}
+
+/*Caso 2 - Felipe*/
+/**
+ * @brief Verifica se um produto está cadastrando incorretamente.
+ *
+ * Esta função simula o cadastro de um produto.
+ *
+ * @param nome Nome do produto.
+ *
+ * @return int Retorna 0 indicando nome inválido.
+ */
+ /*caso de teste 2 - Felipe*/
+int cadastrarProdutoSemNome(char nome[])
+{
+    if(nome[0] == '\0')
+    {
+        return 0;
+    }
+
+    return 1;
+}
+
+/*Caso 3 - Felipe*/
+/**
+ * @brief Verifica se um produto está sendo cadastrado com quantidade inválida.
+ *
+ * Esta função simula o cadastro de um produto com quantidade em estoque negativa.
+ *
+ * @param quantidade Quantidade em estoque do produto.
+ *
+ * @return int Retorna 0 indicando quantidade inválida. 
+ */
+/*Caso de teste 3 - Felipe*/
+int cadastrarProdutoQuantidadeNegativa(int quantidade)
+{
+    if(quantidade < 0)
+    {
+        return 0;
+    }
+
+    return 1;
+}
+
+/*Caso 1 - Henry*/
+/**
+ *@brief Verifica se o codigo do produto e composto apenas de numeros.
+ *
+ *Esta funcao esta simulando o preenchimento do campo 'codigo do produto' com caracteres invalidos.
+ *
+ *@param Codigo codigo do produto
+ *
+ *@return devera retornar 0 significando codigo invalido.
+ */
+ /*Caso de teste 4 - Henry*/
+ 
+int validarCodigoProduto(char codigo[])
+{
+    return 0;
+}
