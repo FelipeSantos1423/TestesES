@@ -41,6 +41,18 @@ completo.
 #include <string.h>
 
 /*Caso de teste 1 - Henrique*/
+<<<<<<< HEAD
+=======
+
+/**
+ * @brief Verifica se um produto esta vencido.
+ *
+ * Esta funcao simula a validacao de um produto vencido
+ * retornando o codigo correspondente ao status de vencimento.
+ *
+ * @return int Retorna 1 indicando produto vencido.
+ */
+>>>>>>> produtoVencido
 int produtoVencido()
 {
     return 1;

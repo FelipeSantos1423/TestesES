@@ -47,6 +47,12 @@ int produtoVencido();
 int produtoProximoVencimento();
 int produtoDentroValidade();
 
+<<<<<<< HEAD
+=======
+//PRODUTO_VENCIDO = 1
+//PRODUTO_PROXIMO = 2
+//PRODUTO_OK = 3
+>>>>>>> produtoVencido
 
 /*Caso 1 - Henrique*/
 
