@@ -114,6 +114,7 @@ int cadastrarProdutoQuantidadeNegativa(int quantidade)
     return 1;
 }
 
+
 /*Caso 1 - Henry*/
 /**
  * @brief Verifica se o codigo do produto e composto apenas de numeros.
@@ -126,6 +127,21 @@ int cadastrarProdutoQuantidadeNegativa(int quantidade)
  * @return Retorna 0 indicando codigo invalido.
  */
 int validarCodigoProduto(char codigo[])
+{
+    return 0;
+}
+
+/*Caso 2 - Henry*/
+/**
+ * @brief Verifica se o produto está sendo cadastrado com o setor vazio.
+ *
+ * Esta função simula o preenchimento incorreto do campo
+ * "Setor armazenado", deixando-o vazio.
+ *
+ * @return Espera retorno 0 indicando setor inválido.
+ */
+
+int cadastrarProdutoSemSetor(char setor[])
 {
     return 0;
 }

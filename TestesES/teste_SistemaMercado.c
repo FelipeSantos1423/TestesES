@@ -46,7 +46,6 @@ o teste falha e uma mensagem de erro e exibida.
 int produtoVencido();
 int produtoProximoVencimento();
 int produtoDentroValidade();
-int validarCodigoProduto(char codigo[]);
 
 
 /*Caso 1 - Henrique*/
@@ -134,6 +133,10 @@ MU_TEST(test_cadastrar_produto_quantidade_negativa)
     );
 }
 
+/*****************************************************************/
+int validarCodigoProduto(char codigo[]);
+int cadastrarProdutoSemSetor(char setor[]);
+
 /*Caso 1 - Henry*/
 MU_TEST(test_codigo_produto_com_letras_e_numeros)
 {
@@ -144,6 +147,15 @@ MU_TEST(test_codigo_produto_com_letras_e_numeros)
     mu_assert_int_eq(0, resultado);
 }
 
+/*Caso 2 - Henry*/
+MU_TEST(test_cadastrar_produto_setor_vazio)
+{
+    char setor[] = "";
+
+    int resultado = cadastrarProdutoSemSetor(setor);
+
+    mu_assert_int_eq(0, resultado);
+}
 
 MU_TEST_SUITE(test_suite)
 {
@@ -154,9 +166,9 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_produto_vencido);
     MU_RUN_TEST(test_produto_proximo_vencimento);
     MU_RUN_TEST(test_produto_dentro_validade);
-
+    
     MU_RUN_TEST(test_codigo_produto_com_letras_e_numeros);
-
+    MU_RUN_TEST(test_cadastrar_produto_setor_vazio);
 }
 
 int main()
