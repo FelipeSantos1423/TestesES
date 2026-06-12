@@ -133,15 +133,32 @@ int validarCodigoProduto(char codigo[])
 
 /*Caso 2 - Henry*/
 /**
- * @brief Verifica se o produto está sendo cadastrado com o setor vazio.
+ * @brief Verifica se o produto esta sendo cadastrado com o setor vazio.
  *
- * Esta função simula o preenchimento incorreto do campo
+ * Esta funcao simula o preenchimento incorreto do campo
  * "Setor armazenado", deixando-o vazio.
  *
- * @return Espera retorno 0 indicando setor inválido.
+ * @param setor Setor do produto.
+ *
+ * @return Retorna 0 indicando setor invalido.
  */
-
 int cadastrarProdutoSemSetor(char setor[])
+{
+    return 0;
+}
+
+/*Caso 3 - Henry*/
+/**
+ * @brief Verifica se a quantidade do produto possui valor nao numerico.
+ *
+ * Esta funcao simula o preenchimento incorreto do campo
+ * quantidade com caracteres alfabeticos.
+ *
+ * @param quantidade Quantidade informada pelo usuario.
+ *
+ * @return Retorna 0 indicando quantidade invalida.
+ */
+int cadastrarProdutoQuantidadeNaoNumerica(char quantidade[])
 {
     return 0;
 }
