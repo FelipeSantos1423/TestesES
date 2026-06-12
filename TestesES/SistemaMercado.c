@@ -34,7 +34,7 @@ completo.
 * @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
 * @author Felipe
 * @date 2026
-* @version 1.6.1
+* @version 1.9.2
 */
 
 #include <stdio.h>
@@ -49,6 +49,7 @@ completo.
  * Esta funcao simula a validacao de um produto vencido
  * retornando o codigo correspondente ao status de vencimento.
  *
+ * @param diasParaVencer
  * @return int Retorna 1 indicando produto vencido.
  */
 
@@ -66,6 +67,7 @@ int produtoVencido(int diasParaVencer)
  * Esta funcao simula a situacao em que um produto esta
  * proximo da data de vencimento e deve ser monitorado.
  *
+ * @param diasParaVencer
  * @return int Retorna 2 indicando produto proximo do vencimento.
  */
 int produtoProximoVencimento(int diasParaVencer)
@@ -82,7 +84,8 @@ int produtoProximoVencimento(int diasParaVencer)
  * Esta funcao simula a validacao de um produto que ainda
  * pode ser comercializado normalmente.
  *
- * @return int Retorna 2 indicando produto dentro da validade.
+ * @param diasParaVencer
+ * @return int Retorna 3 indicando produto dentro da validade.
  */
 int produtoDentroValidade(int diasParaVencer)
 {
