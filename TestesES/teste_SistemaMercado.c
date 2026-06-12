@@ -3,59 +3,68 @@
 ARQUIVO: teste_SistemaMercado.c
 ====================================================
 
-Este arquivo contém os testes unitários do sistema
+Este arquivo contem os testes unitarios do sistema
 de estoque do supermercado utilizando a biblioteca
 MinUnit.
 
 Objetivo:
-Verificar se as funções implementadas em
+Verificar se as funcoes implementadas em
 SistemaMercado.c apresentam o comportamento esperado.
 
-Cada caso de teste representa um cenário de uso,
+Cada caso de teste representa um cenario de uso,
 incluindo:
 
-- cenráios válidos;
-- cenários alternativos;
-- cenários de excessãoo.
+- cenarios validos;
+- cenarios alternativos;
+- cenarios de excecao.
 
-Os testes sÃ£o executados individualmente atravÃ©s
+Os testes sao executados individualmente atraves
 das macros da biblioteca MinUnit.
 
 Exemplo:
 
-- cadastrar produto válido;
-- cadastrar produto com dados inválidos;
+- cadastrar produto valido;
+- cadastrar produto com dados invalidos;
 - remover produto existente;
 - buscar produto inexistente;
 - atualizar estoque.
 
-Caso uma condição esperada não seja satisfeita,
-o teste falha e uma mensagem de erro é exibida.
+Caso uma condicao esperada nao seja satisfeita,
+o teste falha e uma mensagem de erro e exibida.
 
 ====================================================
 */
 
 #include <stdio.h>
 #include "minunit.h"
-#define PRODUTO_VENCIDO 0
-#define PRODUTO_PROXIMO 1
-#define PRODUTO_OK 2
 
-/* Funções que estão no SistemaMercado.c */
+/* Funcoes que estao no SistemaMercado.c */
 int produtoVencido();
 int produtoProximoVencimento();
 int produtoDentroValidade();
+
+//PRODUTO_VENCIDO = 1
+//PRODUTO_PROXIMO = 2
+//PRODUTO_OK = 3
 
 /*Caso 1 - Henrique*/
 MU_TEST(test_produto_vencido)
 {
     mu_assert_int_eq(
-        2,
+        1,
         produtoVencido()
     );
 }
 
 /*Caso 2 - Henrique*/
+/**
+ * @brief Verifica se um produto esta proximo do vencimento.
+ *
+ * Esta funcao simula a situacao em que um produto esta
+ * proximo da data de vencimento e deve ser monitorado.
+ *
+ * @return int Retorna 1 indicando produto proximo do vencimento.
+ */
 MU_TEST(test_produto_proximo_vencimento)
 {
     mu_assert_int_eq(
@@ -65,6 +74,14 @@ MU_TEST(test_produto_proximo_vencimento)
 }
 
 /*Caso 3 - Henrique*/
+/**
+ * @brief Verifica se um produto esta dentro da validade.
+ *
+ * Esta funcao simula a validacao de um produto que ainda
+ * pode ser comercializado normalmente.
+ *
+ * @return int Retorna 2 indicando produto dentro da validade.
+ */
 MU_TEST(test_produto_dentro_validade)
 {
     mu_assert_int_eq(
@@ -75,24 +92,94 @@ MU_TEST(test_produto_dentro_validade)
 
 /*****************************************************************/
 
-/* Função que está no SistemaMercado.c */
-int cadastrarProduto(char nome[], int quantidade);
+/*Caso 1 - Felipe*/
+int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int cod_pdt);
+int cadastrarProdutoSemNome(char nome[]);
+int cadastrarProdutoQuantidadeNegativa(int quantidade);
 
 MU_TEST(test_cadastrar_produto_valido)
 {
     mu_assert(
-        cadastrarProduto("Arroz", 10) == 0,
+        cadastrarProduto("Arroz", 10, "", 12.90, 10) == 0,
         "Erro ao cadastrar produto valido"
     );
+}
+
+/*Caso 2 - Felipe*/
+MU_TEST(test_cadastrar_produto_nome_vazio)
+{
+    mu_assert(
+        cadastrarProdutoSemNome("") == 0,
+        "Produto com nome preenchido. Teste mal sucedido (nome deve estar vazio)"
+    );
+}
+
+/*Caso 3 - Felipe*/
+MU_TEST(test_cadastrar_produto_quantidade_negativa)
+{
+    mu_assert(
+        cadastrarProdutoQuantidadeNegativa(-5) == 0,
+        "Produto com quantidade positiva preenchido. Teste mal sucedido (quantidade deve estar negativa)"
+    );
+}
+
+/*****************************************************************/
+int validarCodigoProduto(char codigo[]);
+int cadastrarProdutoSemSetor(char setor[]);
+int cadastrarProdutoQuantidadeNaoNumerica(char quantidade[]);
+
+/*Caso 1 - Henry*/
+MU_TEST(test_codigo_produto_com_letras_e_numeros)
+{
+    char codigo[] = "ABC123";
+
+    int resultado = validarCodigoProduto(codigo);
+
+    mu_assert_int_eq(0, resultado);
+}
+
+/*Caso 2 - Henry*/
+MU_TEST(test_cadastrar_produto_setor_vazio)
+{
+    char setor[] = "";
+
+    int resultado = cadastrarProdutoSemSetor(setor);
+
+    mu_assert_int_eq(0, resultado);
+}
+
+/*Caso 2 - Henry*/
+
+/**
+ * @brief Verifica se a quantidade do produto possui valor nao numerico.
+ *
+ * Esta funcao simula o preenchimento incorreto do campo
+ * quantidade com caracteres alfabeticos.
+ *
+ * @return Espera retorno 0 indicando quantidade invalida.
+ */
+MU_TEST(test_cadastrar_produto_quantidade_nao_numerica)
+{
+    char quantidade[] = "ABC";
+
+    int resultado = cadastrarProdutoQuantidadeNaoNumerica(quantidade);
+
+    mu_assert_int_eq(0, resultado);
 }
 
 MU_TEST_SUITE(test_suite)
 {
     MU_RUN_TEST(test_cadastrar_produto_valido);
-    
+    MU_RUN_TEST(test_cadastrar_produto_nome_vazio);
+    MU_RUN_TEST(test_cadastrar_produto_quantidade_negativa);
+
     MU_RUN_TEST(test_produto_vencido);
     MU_RUN_TEST(test_produto_proximo_vencimento);
     MU_RUN_TEST(test_produto_dentro_validade);
+    
+    MU_RUN_TEST(test_codigo_produto_com_letras_e_numeros);
+    MU_RUN_TEST(test_cadastrar_produto_setor_vazio);
+    MU_RUN_TEST(test_cadastrar_produto_quantidade_nao_numerica);
 }
 
 int main()
