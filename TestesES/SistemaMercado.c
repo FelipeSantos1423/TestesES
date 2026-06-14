@@ -34,7 +34,7 @@ completo.
 * @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
 * @author Felipe
 * @date 2026
-* @version 1.9.2
+* @version 1.10.2
 */
 
 #include <stdio.h>
@@ -197,4 +197,13 @@ int cadastrarProdutoSemSetor(char setor[])
 int cadastrarProdutoQuantidadeNaoNumerica(char quantidade[])
 {
     return 0;
+}
+
+//Caso 1 - JoaoGuilherme//
+
+int cadastrarProdutoPrecoVazio(float preco) {
+    if (preco == 0) {
+        return 0; // inválido
+    }
+    return 1; // válido
 }

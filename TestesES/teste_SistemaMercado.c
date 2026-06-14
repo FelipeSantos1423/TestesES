@@ -151,14 +151,7 @@ MU_TEST(test_cadastrar_produto_setor_vazio)
 
 /*Caso 2 - Henry*/
 
-/**
- * @brief Verifica se a quantidade do produto possui valor nao numerico.
- *
- * Esta funcao simula o preenchimento incorreto do campo
- * quantidade com caracteres alfabeticos.
- *
- * @return Espera retorno 0 indicando quantidade invalida.
- */
+
 MU_TEST(test_cadastrar_produto_quantidade_nao_numerica)
 {
     char quantidade[] = "ABC";
@@ -167,7 +160,17 @@ MU_TEST(test_cadastrar_produto_quantidade_nao_numerica)
 
     mu_assert_int_eq(0, resultado);
 }
+//Caso 1 - JoaoGuilherme//
 
+MU_TEST(test_cadastrar_produto_preco_vazio)
+{
+    float preco = 0;
+
+    int resultado = cadastrarProdutoPrecoVazio(preco);
+
+    mu_assert_int_eq(0, resultado);
+}
+	
 MU_TEST_SUITE(test_suite)
 {
     MU_RUN_TEST(test_cadastrar_produto_valido);
@@ -181,6 +184,8 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_codigo_produto_com_letras_e_numeros);
     MU_RUN_TEST(test_cadastrar_produto_setor_vazio);
     MU_RUN_TEST(test_cadastrar_produto_quantidade_nao_numerica);
+    
+    MU_RUN_TEST (test_cadastrar_produto_preco_vazio);
 }
 
 int main()
