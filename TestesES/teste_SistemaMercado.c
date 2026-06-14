@@ -179,7 +179,16 @@ MU_TEST(test_cadastrar_produto_preco_negativo)
 
     mu_assert_int_eq(1, resultado);
 }
-	
+//Caso 3 - JoaoGuilherme//
+MU_TEST(test_cadastrar_produto_codigo_vazio)
+{
+    int codigo = 0;
+
+    int resultado = cadastrarProdutoCodigoVazio(codigo);
+
+    mu_assert_int_eq(0, resultado);
+}
+
 MU_TEST_SUITE(test_suite)
 {
     MU_RUN_TEST(test_cadastrar_produto_valido);
@@ -196,6 +205,7 @@ MU_TEST_SUITE(test_suite)
     
     MU_RUN_TEST (test_cadastrar_produto_preco_vazio);
     MU_RUN_TEST (test_cadastrar_produto_preco_negativo);
+    MU_RUN_TEST (test_cadastrar_produto_codigo_vazio);
 }
 
 int main()

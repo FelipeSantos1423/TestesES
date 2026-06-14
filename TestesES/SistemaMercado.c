@@ -34,7 +34,7 @@ completo.
 * @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
 * @author Felipe
 * @date 2026
-* @version 1.11.2
+* @version 1.12.2
 */
 
 #include <stdio.h>
@@ -231,6 +231,25 @@ int cadastrarProdutoPrecoVazio(float preco) {
  */
 int cadastrarProdutoPrecoNegativo(float preco) {
     if (preco < 0) {
+        return 0; // inválido
+    }
+    return 1; // válido
+}
+
+//Caso 3- JoaoGuilherme//
+/**
+ * @brief Verifica se o codigo do produto foi informado.
+ *
+ * Esta funcao simula o preenchimento incorreto do campo
+ * codigo com valor vazio (igual a 0).
+ *
+ * @param codigo Codigo informado pelo usuario.
+ *
+ * @return Retorna 0 indicando codigo invalido.
+ */
+int cadastrarProdutoCodigoVazio(int codigo)
+{
+    if (codigo == 0) {
         return 0; // inválido
     }
     return 1; // válido
