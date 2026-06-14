@@ -170,6 +170,15 @@ MU_TEST(test_cadastrar_produto_preco_vazio)
 
     mu_assert_int_eq(0, resultado);
 }
+//Caso 2 - JoaoGuilherme//
+MU_TEST(test_cadastrar_produto_preco_negativo)
+{
+    float preco = -10.0;
+
+    int resultado = cadastrarProdutoPrecoNegativo(preco);
+
+    mu_assert_int_eq(1, resultado);
+}
 	
 MU_TEST_SUITE(test_suite)
 {
@@ -186,6 +195,7 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_cadastrar_produto_quantidade_nao_numerica);
     
     MU_RUN_TEST (test_cadastrar_produto_preco_vazio);
+    MU_RUN_TEST (test_cadastrar_produto_preco_negativo);
 }
 
 int main()

@@ -34,7 +34,7 @@ completo.
 * @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
 * @author Felipe
 * @date 2026
-* @version 1.10.2
+* @version 1.11.2
 */
 
 #include <stdio.h>
@@ -200,9 +200,37 @@ int cadastrarProdutoQuantidadeNaoNumerica(char quantidade[])
 }
 
 //Caso 1 - JoaoGuilherme//
+/**
+ * @brief Verifica se o preco do produto foi informado.
+ *
+ * Esta funcao simula o preenchimento incorreto do campo
+ * preco com valor vazio (igual a 0).
+ *
+ * @param preco Preco informado pelo usuario.
+ *
+ * @return Retorna 0 indicando preco invalido.
+ */
 
 int cadastrarProdutoPrecoVazio(float preco) {
     if (preco == 0) {
+        return 0; // inválido
+    }
+    return 1; // válido
+}
+
+//Caso 2 - JoaoGuilherme//
+/**
+ * @brief Verifica se o produto pode ser cadastrado com um valor negativo.
+ *
+ * Esta funcao simula o preenchimento incorreto do campo
+ * preco com um valor menor que zero.
+ *
+ * @param preco Preco informado pelo usuario.
+ *
+ * @return Retorna 0 indicando preco invalido.
+ */
+int cadastrarProdutoPrecoNegativo(float preco) {
+    if (preco < 0) {
         return 0; // inválido
     }
     return 1; // válido
