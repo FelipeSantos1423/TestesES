@@ -34,7 +34,7 @@ completo.
 * @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
 * @author Felipe
 * @date 2026
-* @version 1.13.2
+* @version 1.14.2
 */
 
 #include <stdio.h>
@@ -273,5 +273,23 @@ int cadastrarProdutoValidadeVazia(int validade)
     }
     return 1; // válida
 }
+//Caso 2 - Igor Ramos//
 
+/**
+ * @brief Verifica se a quantidade em estoque foi informada.
+ *
+ * Esta funcao simula o preenchimento incorreto do campo
+ * estoque com valor vazio (igual a 0).
+ *
+ * @param estoque Quantidade em estoque informada pelo usuario.
+ *
+ * @return Retorna 0 indicando estoque invalido.
+ */
+int cadastrarProdutoEstoqueVazio(int estoque)
+{
+    if (estoque == 0) {
+        return 0; // inválido
+    }
+    return 1; // válido
+}
 

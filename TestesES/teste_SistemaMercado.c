@@ -197,6 +197,15 @@ MU_TEST(test_cadastrar_produto_validade_vazia)
 
     mu_assert_int_eq(0, resultado);
 }
+// Caso 2 - Igor Ramos//
+MU_TEST(test_cadastrar_produto_estoque_vazio)
+{
+    int estoque = 0;
+
+    int resultado = cadastrarProdutoEstoqueVazio(estoque);
+
+    mu_assert_int_eq(0, resultado);
+}
 
 MU_TEST_SUITE(test_suite)
 {
@@ -217,6 +226,7 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST (test_cadastrar_produto_codigo_vazio);
     
     MU_RUN_TEST(test_cadastrar_produto_validade_vazia);
+    MU_RUN_TEST(test_cadastrar_produto_estoque_vazio);
 }
 
 int main()
