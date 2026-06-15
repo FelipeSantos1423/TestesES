@@ -285,6 +285,28 @@ int cadastrarProdutoValidadeVazia(int validade)
  *
  * @return Retorna 0 indicando estoque invalido.
  */
+ 
+ // Caso 3 - Igor Ramos//
+
+/**
+ * @brief Verifica se a quantidade em estoque é negativa.
+ *
+ * Esta funcao simula o preenchimento incorreto do campo
+ * estoque com um valor menor que zero.
+ *
+ * @param estoque Quantidade em estoque informada pelo usuario.
+ *
+ * @return Retorna 0 indicando estoque invalido.
+ */
+int cadastrarProdutoEstoqueNegativo(int estoque)
+{
+    if (estoque < 0) {
+        return 0; // inválido
+    }
+    return 1; // válido
+}
+
+
 int cadastrarProdutoEstoqueVazio(int estoque)
 {
     if (estoque == 0) {

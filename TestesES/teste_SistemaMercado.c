@@ -206,7 +206,15 @@ MU_TEST(test_cadastrar_produto_estoque_vazio)
 
     mu_assert_int_eq(0, resultado);
 }
+// Caso 3 - Igor Ramos//
+MU_TEST(test_cadastrar_produto_estoque_negativo)
+{
+    int estoque = -10;
 
+    int resultado = cadastrarProdutoEstoqueNegativo(estoque);
+
+    mu_assert_int_eq(0, resultado);
+}
 
 MU_TEST_SUITE(test_suite)
 {
@@ -228,7 +236,9 @@ MU_TEST_SUITE(test_suite)
     
     MU_RUN_TEST(test_cadastrar_produto_validade_vazia);
     MU_RUN_TEST(test_cadastrar_produto_estoque_vazio);
-    
+    MU_RUN_TEST(test_cadastrar_produto_estoque_negativo);
+
+
 }
 
 int main()
