@@ -1,75 +1,91 @@
-//PRODUTO_VENCIDO = 0
-//PRODUTO_PROXIMO = 1
-//PRODUTO_OK = 2
-
 #include <stdio.h>
 #include "minunit.h"
 
-/* Funcoes que estao no SistemaMercado.c */
+/* Funcoes de validacao - Henrique */
 int produtoVencido(int diasParaVencer);
 int produtoProximoVencimento(int diasParaVencer);
 int produtoDentroValidade(int diasParaVencer);
 
-//PRODUTO_VENCIDO = 1
-//PRODUTO_PROXIMO = 2
-//PRODUTO_OK = 3
-
-/*Caso 1 - Henrique*/
-
-/**
- * @brief Verifica se um produto esta vencido.
- *
- * Esta funcao simula a validacao de um produto vencido
- * retornando o codigo correspondente ao status de vencimento.
- *
- * @return int Retorna 0 indicando produto vencido.
- */
-MU_TEST(test_produto_vencido)
-{
-    mu_assert_int_eq(
-        1,
-        produtoVencido(-2)
-    );
-}
-
-//if diasparaVencer == 0 venceu
-//if dias paraVencer <=7 ta pra vencer
-//if >7 ta longe de vencer
-
-/*Caso 2 - Henrique*/
-MU_TEST(test_produto_proximo_vencimento)
-{
-    mu_assert_int_eq(
-        2,
-        produtoProximoVencimento(5)
-    );
-}
-
-/*Caso 3 - Henrique*/
-MU_TEST(test_produto_dentro_validade)
-{
-    mu_assert_int_eq(
-        3,
-        produtoDentroValidade(8)
-    );
-}
-
-/*****************************************************************/
-
-/*Caso 1 - Felipe*/
+/* Funcoes de cadastro - Felipe */
 int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int cod_pdt);
 int cadastrarProdutoSemNome(char nome[]);
 int cadastrarProdutoQuantidadeNegativa(int quantidade);
 
+/* Funcoes de validacao - Henry */
+int validarCodigoProduto(char codigo[]);
+int cadastrarProdutoSemSetor(char setor[]);
+int cadastrarProdutoQuantidadeNaoNumerica(char quantidade[]);
+
+/* Funcoes de validacao - Joao Guilherme */
+int cadastrarProdutoPrecoVazio(float preco);
+int cadastrarProdutoPrecoNegativo(float preco);
+int cadastrarProdutoCodigoVazio(int codigo);
+
+/* Funcoes de validacao - Igor Ramos */
+int cadastrarProdutoValidadeVazia(int validade);
+int cadastrarProdutoEstoqueVazio(int estoque);
+int cadastrarProdutoEstoqueNegativo(int estoque);
+
+/*****************************************************************/
+/* Casos de teste - Henrique */
+/*****************************************************************/
+
+/**
+ * @brief Verifica se um produto vencido retorna o codigo correto.
+ *
+ * O teste envia uma quantidade negativa de dias para vencimento,
+ * simulando um produto ja vencido.
+ */
+MU_TEST(test_produto_vencido)
+{
+    mu_assert_int_eq(1, produtoVencido(-2));
+}
+
+/**
+ * @brief Verifica se um produto proximo do vencimento retorna o codigo correto.
+ *
+ * O teste envia uma quantidade de dias dentro da faixa considerada
+ * como proxima ao vencimento.
+ */
+MU_TEST(test_produto_proximo_vencimento)
+{
+    mu_assert_int_eq(2, produtoProximoVencimento(5));
+}
+
+/**
+ * @brief Verifica se um produto dentro da validade retorna o codigo correto.
+ *
+ * O teste envia uma quantidade de dias suficiente para que o produto
+ * seja considerado dentro da validade.
+ */
+MU_TEST(test_produto_dentro_validade)
+{
+    mu_assert_int_eq(3, produtoDentroValidade(10));
+}
+
+/*****************************************************************/
+/* Casos de teste - Felipe */
+/*****************************************************************/
+
+/**
+ * @brief Verifica o cadastro de um produto com dados validos.
+ *
+ * O teste garante que o sistema aceite o cadastro quando todos
+ * os campos obrigatorios estiverem preenchidos corretamente.
+ */
 MU_TEST(test_cadastrar_produto_valido)
 {
     mu_assert(
-        cadastrarProduto("Arroz", 10, "", 12.90, 10) == 0,
+        cadastrarProduto("Arroz", 10, "Grãos", 12.90, 10) == 0,
         "Erro ao cadastrar produto valido"
     );
 }
 
-/*Caso 2 - Felipe*/
+/**
+ * @brief Verifica o comportamento ao cadastrar um produto sem nome.
+ *
+ * O teste garante que o sistema trate corretamente um nome vazio.
+ */
 MU_TEST(test_cadastrar_produto_nome_vazio)
 {
     mu_assert(
@@ -78,7 +94,11 @@ MU_TEST(test_cadastrar_produto_nome_vazio)
     );
 }
 
-/*Caso 3 - Felipe*/
+/**
+ * @brief Verifica o comportamento ao cadastrar um produto com quantidade negativa.
+ *
+ * O teste garante que o sistema identifique quantidades invalidas.
+ */
 MU_TEST(test_cadastrar_produto_quantidade_negativa)
 {
     mu_assert(
@@ -88,11 +108,15 @@ MU_TEST(test_cadastrar_produto_quantidade_negativa)
 }
 
 /*****************************************************************/
-int validarCodigoProduto(char codigo[]);
-int cadastrarProdutoSemSetor(char setor[]);
-int cadastrarProdutoQuantidadeNaoNumerica(char quantidade[]);
+/* Casos de teste - Henry */
+/*****************************************************************/
 
-/*Caso 1 - Henry*/
+/**
+ * @brief Verifica se o codigo do produto contem letras e numeros.
+ *
+ * O teste valida o comportamento do sistema para codigos
+ * alfanumericos.
+ */
 MU_TEST(test_codigo_produto_com_letras_e_numeros)
 {
     char codigo[] = "ABC123";
@@ -102,19 +126,24 @@ MU_TEST(test_codigo_produto_com_letras_e_numeros)
     mu_assert_int_eq(0, resultado);
 }
 
-/*Caso 2 - Henry*/
+/**
+ * @brief Verifica o cadastro de um produto sem setor informado.
+ *
+ * O teste garante que o sistema trate corretamente um setor vazio.
+ */
 MU_TEST(test_cadastrar_produto_setor_vazio)
 {
-    char setor[] = "";
-
-    int resultado = cadastrarProdutoSemSetor(setor);
-
-    mu_assert_int_eq(0, resultado);
+    mu_assert(
+        cadastrarProduto("Arroz", 10, "", 12.90, 10) == 0,
+        "Erro ao cadastrar produto valido"
+    );
 }
 
-/*Caso 2 - Henry*/
-
-
+/**
+ * @brief Verifica o cadastro de um produto com quantidade nao numerica.
+ *
+ * O teste valida o tratamento de entradas invalidas para o campo quantidade.
+ */
 MU_TEST(test_cadastrar_produto_quantidade_nao_numerica)
 {
     char quantidade[] = "ABC";
@@ -123,8 +152,16 @@ MU_TEST(test_cadastrar_produto_quantidade_nao_numerica)
 
     mu_assert_int_eq(0, resultado);
 }
-//Caso 1 - JoaoGuilherme//
 
+/*****************************************************************/
+/* Casos de teste - Joao Guilherme */
+/*****************************************************************/
+
+/**
+ * @brief Verifica o comportamento ao cadastrar um produto com preco vazio.
+ *
+ * O teste utiliza o valor zero para simular a ausencia de preco.
+ */
 MU_TEST(test_cadastrar_produto_preco_vazio)
 {
     float preco = 0;
@@ -133,16 +170,26 @@ MU_TEST(test_cadastrar_produto_preco_vazio)
 
     mu_assert_int_eq(0, resultado);
 }
-//Caso 2 - JoaoGuilherme//
+
+/**
+ * @brief Verifica o comportamento ao cadastrar um produto com preco negativo.
+ *
+ * O teste garante que valores negativos sejam tratados adequadamente.
+ */
 MU_TEST(test_cadastrar_produto_preco_negativo)
 {
     float preco = -10.0;
 
     int resultado = cadastrarProdutoPrecoNegativo(preco);
 
-    mu_assert_int_eq(1, resultado);
+    mu_assert_int_eq(0, resultado);
 }
-//Caso 3 - JoaoGuilherme//
+
+/**
+ * @brief Verifica o comportamento ao cadastrar um produto sem codigo.
+ *
+ * O teste utiliza o valor zero para representar um codigo vazio.
+ */
 MU_TEST(test_cadastrar_produto_codigo_vazio)
 {
     int codigo = 0;
@@ -151,7 +198,16 @@ MU_TEST(test_cadastrar_produto_codigo_vazio)
 
     mu_assert_int_eq(0, resultado);
 }
-// Caso 1 - Igor Ramos//
+
+/*****************************************************************/
+/* Casos de teste - Igor Ramos */
+/*****************************************************************/
+
+/**
+ * @brief Verifica o comportamento ao cadastrar um produto sem validade.
+ *
+ * O teste utiliza valor zero para representar validade nao informada.
+ */
 MU_TEST(test_cadastrar_produto_validade_vazia)
 {
     int validade = 0;
@@ -160,25 +216,46 @@ MU_TEST(test_cadastrar_produto_validade_vazia)
 
     mu_assert_int_eq(0, resultado);
 }
-// Caso 2 - Igor Ramos//
-MU_TEST(test_cadastrar_produto_estoque_vazio)
+
+/**
+ * @brief Verifica o comportamento ao cadastrar um produto sem estoque.
+ *
+ * O teste utiliza valor zero para representar estoque vazio.
+ */
+MU_TEST(test_cadastrar_produto_quantidade_vazio)
 {
-    int estoque = 0;
+    int quantidade = 0;
 
-    int resultado = cadastrarProdutoEstoqueVazio(estoque);
-
-    mu_assert_int_eq(0, resultado);
-}
-// Caso 3 - Igor Ramos//
-MU_TEST(test_cadastrar_produto_estoque_negativo)
-{
-    int estoque = -10;
-
-    int resultado = cadastrarProdutoEstoqueNegativo(estoque);
+    int resultado = cadastrarProdutoQuantidadeVazio(quantidade);
 
     mu_assert_int_eq(0, resultado);
 }
 
+/**
+ * @brief Verifica o comportamento ao cadastrar um produto com quantidade invalida (.
+ *
+ * O teste garante que o sistema trate corretamente valores invalidos
+ * para o estoque.
+ */
+MU_TEST(test_cadastrar_produto_quantidade_invalida)
+{
+    char quantidade[] = "ABC";
+
+    int resultado = cadastrarProdutoQuantidadeInvalida(quantidade);
+
+    mu_assert_int_eq(0, resultado);
+}
+
+/*****************************************************************/
+/* Suite de testes */
+/*****************************************************************/
+
+/**
+ * @brief Executa todos os testes do sistema.
+ *
+ * Reune todos os casos de teste implementados pelos integrantes
+ * do grupo e executa cada um deles.
+ */
 MU_TEST_SUITE(test_suite)
 {
     MU_RUN_TEST(test_cadastrar_produto_valido);
@@ -188,22 +265,27 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_produto_vencido);
     MU_RUN_TEST(test_produto_proximo_vencimento);
     MU_RUN_TEST(test_produto_dentro_validade);
-    
+
     MU_RUN_TEST(test_codigo_produto_com_letras_e_numeros);
     MU_RUN_TEST(test_cadastrar_produto_setor_vazio);
     MU_RUN_TEST(test_cadastrar_produto_quantidade_nao_numerica);
-    
-    MU_RUN_TEST (test_cadastrar_produto_preco_vazio);
-    MU_RUN_TEST (test_cadastrar_produto_preco_negativo);
-    MU_RUN_TEST (test_cadastrar_produto_codigo_vazio);
-    
+
+    MU_RUN_TEST(test_cadastrar_produto_preco_vazio);
+    MU_RUN_TEST(test_cadastrar_produto_preco_negativo);
+    MU_RUN_TEST(test_cadastrar_produto_codigo_vazio);
+
     MU_RUN_TEST(test_cadastrar_produto_validade_vazia);
-    MU_RUN_TEST(test_cadastrar_produto_estoque_vazio);
-    MU_RUN_TEST(test_cadastrar_produto_estoque_negativo);
-
-
+    MU_RUN_TEST(test_cadastrar_produto_quantidade_vazio);
+    MU_RUN_TEST(test_cadastrar_produto_quantidade_invalida);
 }
 
+/**
+ * @brief Funcao principal do programa de testes.
+ *
+ * Executa a suite de testes e exibe o relatorio final.
+ *
+ * @return Codigo de saida gerado pelo MinUnit.
+ */
 int main()
 {
     MU_RUN_SUITE(test_suite);

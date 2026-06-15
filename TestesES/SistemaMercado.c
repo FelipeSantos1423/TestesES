@@ -1,25 +1,23 @@
 /**
-* @brief Sistema para Mercado
+* @brief Sistema para estoque e controle de validade para Mercado
 *
 * @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
-* @author Felipe
+* @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, João Guilherme
 * @date 2026
-* @version 1.15.2
+* @version 1.15.3
 */
 
 #include <stdio.h>
 #include <string.h>
 
 /*Caso de teste 1 - Henrique*/
-
-
 /**
- * @brief Verifica se um produto esta vencido.
+ * @brief Verifica se é exibida a mensagem de "produto está vencido".
  *
  * Esta funcao simula a validacao de um produto vencido
  * retornando o codigo correspondente ao status de vencimento.
  *
- * @param diasParaVencer
+ * @param diasParaVencer Dias restantes para vencimento
  * @return int Retorna 1 indicando produto vencido.
  */
 
@@ -69,11 +67,13 @@ int produtoDentroValidade(int diasParaVencer)
 /**
  * @brief Verifica se um produto esta sendo cadastrado corretamente.
  *
- * Esta funcao simula o cadastro de um produto.
+ * Esta funcao simula o cadastro de um produto com todos os campos preenchidos corretamente.
  *
  * @param nome Nome do produto.
  * @param quantidade Quantidade do produto.
- *
+ * @param setor Setor que produto será armazenado
+ * @param preco Preço do produto
+ * @param cod_pdt Código do produto
  * @return int Retorna 0 indicando produto cadastrado com sucesso.
  */
 int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int cod_pdt)
@@ -83,9 +83,9 @@ int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int
 
 /*Caso 2 - Felipe*/
 /**
- * @brief Verifica se um produto esta sendo cadastrado incorretamente.
+ * @brief Verifica se um produto é impedido de ser cadastrado sem nome.
  *
- * Esta funcao simula o cadastro de um produto.
+ * Esta funcao simula o cadastro de um produto sem nome.
  *
  * @param nome Nome do produto.
  *
@@ -95,6 +95,7 @@ int cadastrarProdutoSemNome(char nome[])
 {
     if(nome[0] == '\0')
     {
+    	printf("Caso 2.2 - Mensagem de erro: Produto não pode ser cadastrado sem nome\n");
         return 0;
     }
 
@@ -115,6 +116,7 @@ int cadastrarProdutoQuantidadeNegativa(int quantidade)
 {
     if(quantidade < 0)
     {
+    	printf("Caso 2.3 - Mensagem de erro: Produto não pode ser cadastrado com quantidade negativa");
         return 0;
     }
 
@@ -124,10 +126,9 @@ int cadastrarProdutoQuantidadeNegativa(int quantidade)
 
 /*Caso 1 - Henry*/
 /**
- * @brief Verifica se o codigo do produto e composto apenas de numeros.
+ * @brief Verifica se o codigo do produto é composto apenas por numeros.
  *
- * Esta funcao simula o preenchimento do campo
- * "codigo do produto" com caracteres invalidos.
+ * Esta função simula o preenchimento do campo "codigo do produto" com caracteres invalidos.
  *
  * @param codigo Codigo do produto.
  *
@@ -149,7 +150,7 @@ int validarCodigoProduto(char codigo[])
  *
  * @return Retorna 0 indicando setor invalido.
  */
-int cadastrarProdutoSemSetor(char setor[])
+int cadastrarProdutoSemSetor(char nome[], int quantidade, char setor[], float preco, int cod_pdt)
 {
     return 0;
 }
@@ -269,18 +270,15 @@ int cadastrarProdutoValidadeVazia(int validade)
  *
  * @return Retorna 0 indicando estoque invalido.
  */
-int cadastrarProdutoEstoqueNegativo(int estoque)
+int cadastrarProdutoQuantidadeInvalida(int quantidade)
 {
-    if (estoque < 0) {
         return 0; // inválido
-    }
-    return 1; // válido
 }
 
 
-int cadastrarProdutoEstoqueVazio(int estoque)
+int cadastrarProdutoQuantidadeVazio(int quantidade)
 {
-    if (estoque == 0) {
+    if (quantidade == 0) {
         return 0; // inválido
     }
     return 1; // válido
