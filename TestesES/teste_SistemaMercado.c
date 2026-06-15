@@ -69,7 +69,7 @@ MU_TEST(test_produto_vencido)
     );
 }
 
-//if diasparaVencer ==0 venceu
+//if diasparaVencer == 0 venceu
 //if dias paraVencer <=7 ta pra vencer
 //if >7 ta longe de vencer
 
@@ -188,6 +188,15 @@ MU_TEST(test_cadastrar_produto_codigo_vazio)
 
     mu_assert_int_eq(0, resultado);
 }
+// Caso 1 - Igor Ramos//
+MU_TEST(test_cadastrar_produto_validade_vazia)
+{
+    int validade = 0;
+
+    int resultado = cadastrarProdutoValidadeVazia(validade);
+
+    mu_assert_int_eq(0, resultado);
+}
 
 MU_TEST_SUITE(test_suite)
 {
@@ -206,6 +215,8 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST (test_cadastrar_produto_preco_vazio);
     MU_RUN_TEST (test_cadastrar_produto_preco_negativo);
     MU_RUN_TEST (test_cadastrar_produto_codigo_vazio);
+    
+    MU_RUN_TEST(test_cadastrar_produto_validade_vazia);
 }
 
 int main()

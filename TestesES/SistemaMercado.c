@@ -34,7 +34,7 @@ completo.
 * @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
 * @author Felipe
 * @date 2026
-* @version 1.12.2
+* @version 1.13.2
 */
 
 #include <stdio.h>
@@ -254,3 +254,24 @@ int cadastrarProdutoCodigoVazio(int codigo)
     }
     return 1; // v√°lido
 }
+//Caso 1 - Igor Ramos//
+
+/**
+ * @brief Verifica se a validade do produto foi informada.
+ *
+ * Esta funcao simula o preenchimento incorreto do campo
+ * validade com valor vazio.
+ *
+ * @param validade Data de validade informada pelo usuario.
+ *
+ * @return Retorna 0 indicando validade invalida.
+ */
+int cadastrarProdutoValidadeVazia(int validade)
+{
+    if (validade == 0) {
+        return 0; // inv·lida
+    }
+    return 1; // v·lida
+}
+
+
