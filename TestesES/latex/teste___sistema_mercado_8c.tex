@@ -1,0 +1,368 @@
+\doxysection{teste\+\_\+\+Sistema\+Mercado.\+c File Reference}
+\hypertarget{teste___sistema_mercado_8c}{}\label{teste___sistema_mercado_8c}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include "{}minunit.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{teste___sistema_mercado_8c_aeead8bde599f4687df121eabfac5a8c5}{produto\+Vencido}} (int dias\+Para\+Vencer)
+\begin{DoxyCompactList}\small\item\em Sistema para Mercado. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{teste___sistema_mercado_8c_ae6e850a4eb98437c1d4f41da1508dfca}{produto\+Proximo\+Vencimento}} (int dias\+Para\+Vencer)
+\begin{DoxyCompactList}\small\item\em Verifica se um produto esta proximo do vencimento. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{teste___sistema_mercado_8c_aa2c83744c4dbdbb9945f793c762d6f78}{produto\+Dentro\+Validade}} (int dias\+Para\+Vencer)
+\begin{DoxyCompactList}\small\item\em Verifica se um produto esta dentro da validade. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_a35d02e47199d7353434fd842692997e0}{MU\+\_\+\+TEST}} (test\+\_\+produto\+\_\+vencido)
+\begin{DoxyCompactList}\small\item\em Verifica se um produto esta vencido. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_adfae08242fe752a5dafc9a9b84825217}{MU\+\_\+\+TEST}} (test\+\_\+produto\+\_\+proximo\+\_\+vencimento)
+\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_a71e4b7e51ad12d2d9c6ea9d48abd605e}{MU\+\_\+\+TEST}} (test\+\_\+produto\+\_\+dentro\+\_\+validade)
+\item 
+int \doxymbox{\hyperlink{teste___sistema_mercado_8c_aaa445f52fc9aef62ad139bc837b11c3f}{cadastrar\+Produto}} (char nome\+[$\,$]\+, int quantidade, char setor\+[$\,$]\+, float preco, int cod\+\_\+pdt)
+\begin{DoxyCompactList}\small\item\em Verifica se um produto esta sendo cadastrado corretamente. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{teste___sistema_mercado_8c_a79a8f3dc2e50509f7c1043fd85b7daf8}{cadastrar\+Produto\+Sem\+Nome}} (char nome\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Verifica se um produto esta sendo cadastrado incorretamente. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{teste___sistema_mercado_8c_a0f78e2d80cadf0a76c8cd1c2c08e1ed0}{cadastrar\+Produto\+Quantidade\+Negativa}} (int quantidade)
+\begin{DoxyCompactList}\small\item\em Verifica se um produto esta sendo cadastrado com quantidade invalida. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_a4f78b91cf0ddce7e79ae2afe9726a367}{MU\+\_\+\+TEST}} (test\+\_\+cadastrar\+\_\+produto\+\_\+valido)
+\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_ae66a382f19e3df87ef3895fc4d24ab81}{MU\+\_\+\+TEST}} (test\+\_\+cadastrar\+\_\+produto\+\_\+nome\+\_\+vazio)
+\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_aa23de7aa3398f8f829873f1cb8d16740}{MU\+\_\+\+TEST}} (test\+\_\+cadastrar\+\_\+produto\+\_\+quantidade\+\_\+negativa)
+\item 
+int \doxymbox{\hyperlink{teste___sistema_mercado_8c_a456f0ac01cf8252b2115740facfa4348}{validar\+Codigo\+Produto}} (char codigo\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Verifica se o codigo do produto e composto apenas de numeros. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{teste___sistema_mercado_8c_a026c1bf7f220d60304a46b7b8b3d691d}{cadastrar\+Produto\+Sem\+Setor}} (char setor\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Verifica se o produto esta sendo cadastrado com o setor vazio. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{teste___sistema_mercado_8c_a7e3f40e389324c0666f7ab62d08fb9ed}{cadastrar\+Produto\+Quantidade\+Nao\+Numerica}} (char quantidade\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Verifica se a quantidade do produto possui valor nao numerico. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_a70eff26dddf4f8067df9e40cddb715a0}{MU\+\_\+\+TEST}} (test\+\_\+codigo\+\_\+produto\+\_\+com\+\_\+letras\+\_\+e\+\_\+numeros)
+\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_a812c33a5feb8072cf07ad7f277481ebb}{MU\+\_\+\+TEST}} (test\+\_\+cadastrar\+\_\+produto\+\_\+setor\+\_\+vazio)
+\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_a5bd30be4e31fae8427f9c3033dbb4bfc}{MU\+\_\+\+TEST}} (test\+\_\+cadastrar\+\_\+produto\+\_\+quantidade\+\_\+nao\+\_\+numerica)
+\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_aba2ad6b5f5c43734173457e8f4f3e3aa}{MU\+\_\+\+TEST}} (test\+\_\+cadastrar\+\_\+produto\+\_\+preco\+\_\+vazio)
+\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_a8d2ae641e4aa23787c273b7ca63e935e}{MU\+\_\+\+TEST}} (test\+\_\+cadastrar\+\_\+produto\+\_\+preco\+\_\+negativo)
+\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_afd90fb2b6c5367b1ec1619a76e0e7e80}{MU\+\_\+\+TEST}} (test\+\_\+cadastrar\+\_\+produto\+\_\+codigo\+\_\+vazio)
+\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_a33bcd135cd747f31acdd1d641c3c4f5b}{MU\+\_\+\+TEST}} (test\+\_\+cadastrar\+\_\+produto\+\_\+validade\+\_\+vazia)
+\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_a17fc3089d39e92f3969edb8521890fb0}{MU\+\_\+\+TEST}} (test\+\_\+cadastrar\+\_\+produto\+\_\+estoque\+\_\+vazio)
+\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_a39dcc00f57bf7bff157f28e584781d89}{MU\+\_\+\+TEST}} (test\+\_\+cadastrar\+\_\+produto\+\_\+estoque\+\_\+negativo)
+\item 
+\doxymbox{\hyperlink{teste___sistema_mercado_8c_a2bb1dcd555d1f587daba80d8291163a8}{MU\+\_\+\+TEST\+\_\+\+SUITE}} (test\+\_\+suite)
+\item 
+int \doxymbox{\hyperlink{teste___sistema_mercado_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\label{teste___sistema_mercado_8c_doc-func-members}
+\Hypertarget{teste___sistema_mercado_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{teste___sistema_mercado_8c_aaa445f52fc9aef62ad139bc837b11c3f}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!cadastrarProduto@{cadastrarProduto}}
+\index{cadastrarProduto@{cadastrarProduto}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{cadastrarProduto()}{cadastrarProduto()}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_aaa445f52fc9aef62ad139bc837b11c3f} 
+int cadastrar\+Produto (\begin{DoxyParamCaption}\item[{char}]{nome}{\+[$\,$]\+, }\item[{int}]{quantidade}{, }\item[{char}]{setor}{\+[$\,$]\+, }\item[{float}]{preco}{, }\item[{int}]{cod\+\_\+pdt}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se um produto esta sendo cadastrado corretamente. 
+
+Esta funcao simula o cadastro de um produto.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Nome do produto. \\
+\hline
+{\em quantidade} & Quantidade do produto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 0 indicando produto cadastrado com sucesso. 
+\end{DoxyReturn}
+\Hypertarget{teste___sistema_mercado_8c_a7e3f40e389324c0666f7ab62d08fb9ed}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!cadastrarProdutoQuantidadeNaoNumerica@{cadastrarProdutoQuantidadeNaoNumerica}}
+\index{cadastrarProdutoQuantidadeNaoNumerica@{cadastrarProdutoQuantidadeNaoNumerica}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{cadastrarProdutoQuantidadeNaoNumerica()}{cadastrarProdutoQuantidadeNaoNumerica()}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a7e3f40e389324c0666f7ab62d08fb9ed} 
+int cadastrar\+Produto\+Quantidade\+Nao\+Numerica (\begin{DoxyParamCaption}\item[{char}]{quantidade}{\+[$\,$]\+}\end{DoxyParamCaption})}
+
+
+
+Verifica se a quantidade do produto possui valor nao numerico. 
+
+Esta funcao simula o preenchimento incorreto do campo quantidade com caracteres alfabeticos.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantidade} & Quantidade informada pelo usuario.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna 0 indicando quantidade invalida. 
+\end{DoxyReturn}
+\Hypertarget{teste___sistema_mercado_8c_a0f78e2d80cadf0a76c8cd1c2c08e1ed0}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!cadastrarProdutoQuantidadeNegativa@{cadastrarProdutoQuantidadeNegativa}}
+\index{cadastrarProdutoQuantidadeNegativa@{cadastrarProdutoQuantidadeNegativa}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{cadastrarProdutoQuantidadeNegativa()}{cadastrarProdutoQuantidadeNegativa()}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a0f78e2d80cadf0a76c8cd1c2c08e1ed0} 
+int cadastrar\+Produto\+Quantidade\+Negativa (\begin{DoxyParamCaption}\item[{int}]{quantidade}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se um produto esta sendo cadastrado com quantidade invalida. 
+
+Esta funcao simula o cadastro de um produto com quantidade em estoque negativa.
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantidade} & Quantidade em estoque do produto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 0 indicando quantidade invalida. 
+\end{DoxyReturn}
+\Hypertarget{teste___sistema_mercado_8c_a79a8f3dc2e50509f7c1043fd85b7daf8}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!cadastrarProdutoSemNome@{cadastrarProdutoSemNome}}
+\index{cadastrarProdutoSemNome@{cadastrarProdutoSemNome}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{cadastrarProdutoSemNome()}{cadastrarProdutoSemNome()}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a79a8f3dc2e50509f7c1043fd85b7daf8} 
+int cadastrar\+Produto\+Sem\+Nome (\begin{DoxyParamCaption}\item[{char}]{nome}{\+[$\,$]\+}\end{DoxyParamCaption})}
+
+
+
+Verifica se um produto esta sendo cadastrado incorretamente. 
+
+Esta funcao simula o cadastro de um produto.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Nome do produto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 0 indicando nome invalido. 
+\end{DoxyReturn}
+\Hypertarget{teste___sistema_mercado_8c_a026c1bf7f220d60304a46b7b8b3d691d}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!cadastrarProdutoSemSetor@{cadastrarProdutoSemSetor}}
+\index{cadastrarProdutoSemSetor@{cadastrarProdutoSemSetor}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{cadastrarProdutoSemSetor()}{cadastrarProdutoSemSetor()}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a026c1bf7f220d60304a46b7b8b3d691d} 
+int cadastrar\+Produto\+Sem\+Setor (\begin{DoxyParamCaption}\item[{char}]{setor}{\+[$\,$]\+}\end{DoxyParamCaption})}
+
+
+
+Verifica se o produto esta sendo cadastrado com o setor vazio. 
+
+Esta funcao simula o preenchimento incorreto do campo "{}\+Setor armazenado"{}, deixando-\/o vazio.
+
+
+\begin{DoxyParams}{Parameters}
+{\em setor} & Setor do produto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna 0 indicando setor invalido. 
+\end{DoxyReturn}
+\Hypertarget{teste___sistema_mercado_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!main@{main}}
+\index{main@{main}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_afd90fb2b6c5367b1ec1619a76e0e7e80}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_afd90fb2b6c5367b1ec1619a76e0e7e80} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+cadastrar\+\_\+produto\+\_\+codigo\+\_\+vazio}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_a39dcc00f57bf7bff157f28e584781d89}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a39dcc00f57bf7bff157f28e584781d89} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+cadastrar\+\_\+produto\+\_\+estoque\+\_\+negativo}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_a17fc3089d39e92f3969edb8521890fb0}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a17fc3089d39e92f3969edb8521890fb0} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+cadastrar\+\_\+produto\+\_\+estoque\+\_\+vazio}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_ae66a382f19e3df87ef3895fc4d24ab81}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [4/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_ae66a382f19e3df87ef3895fc4d24ab81} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+cadastrar\+\_\+produto\+\_\+nome\+\_\+vazio}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_a8d2ae641e4aa23787c273b7ca63e935e}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [5/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a8d2ae641e4aa23787c273b7ca63e935e} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+cadastrar\+\_\+produto\+\_\+preco\+\_\+negativo}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_aba2ad6b5f5c43734173457e8f4f3e3aa}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [6/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_aba2ad6b5f5c43734173457e8f4f3e3aa} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+cadastrar\+\_\+produto\+\_\+preco\+\_\+vazio}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_a5bd30be4e31fae8427f9c3033dbb4bfc}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [7/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a5bd30be4e31fae8427f9c3033dbb4bfc} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+cadastrar\+\_\+produto\+\_\+quantidade\+\_\+nao\+\_\+numerica}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_aa23de7aa3398f8f829873f1cb8d16740}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [8/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_aa23de7aa3398f8f829873f1cb8d16740} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+cadastrar\+\_\+produto\+\_\+quantidade\+\_\+negativa}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_a812c33a5feb8072cf07ad7f277481ebb}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [9/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a812c33a5feb8072cf07ad7f277481ebb} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+cadastrar\+\_\+produto\+\_\+setor\+\_\+vazio}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_a33bcd135cd747f31acdd1d641c3c4f5b}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [10/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a33bcd135cd747f31acdd1d641c3c4f5b} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+cadastrar\+\_\+produto\+\_\+validade\+\_\+vazia}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_a4f78b91cf0ddce7e79ae2afe9726a367}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [11/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a4f78b91cf0ddce7e79ae2afe9726a367} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+cadastrar\+\_\+produto\+\_\+valido}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_a70eff26dddf4f8067df9e40cddb715a0}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [12/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a70eff26dddf4f8067df9e40cddb715a0} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+codigo\+\_\+produto\+\_\+com\+\_\+letras\+\_\+e\+\_\+numeros}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_a71e4b7e51ad12d2d9c6ea9d48abd605e}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [13/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a71e4b7e51ad12d2d9c6ea9d48abd605e} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+produto\+\_\+dentro\+\_\+validade}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_adfae08242fe752a5dafc9a9b84825217}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [14/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_adfae08242fe752a5dafc9a9b84825217} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+produto\+\_\+proximo\+\_\+vencimento}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_a35d02e47199d7353434fd842692997e0}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [15/15]}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a35d02e47199d7353434fd842692997e0} 
+MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+produto\+\_\+vencido}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se um produto esta vencido. 
+
+Esta funcao simula a validacao de um produto vencido retornando o codigo correspondente ao status de vencimento.
+
+\begin{DoxyReturn}{Returns}
+int Retorna 0 indicando produto vencido. 
+\end{DoxyReturn}
+\Hypertarget{teste___sistema_mercado_8c_a2bb1dcd555d1f587daba80d8291163a8}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!MU\_TEST\_SUITE@{MU\_TEST\_SUITE}}
+\index{MU\_TEST\_SUITE@{MU\_TEST\_SUITE}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST\_SUITE()}{MU\_TEST\_SUITE()}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a2bb1dcd555d1f587daba80d8291163a8} 
+MU\+\_\+\+TEST\+\_\+\+SUITE (\begin{DoxyParamCaption}\item[{test\+\_\+suite}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{teste___sistema_mercado_8c_aa2c83744c4dbdbb9945f793c762d6f78}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!produtoDentroValidade@{produtoDentroValidade}}
+\index{produtoDentroValidade@{produtoDentroValidade}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{produtoDentroValidade()}{produtoDentroValidade()}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_aa2c83744c4dbdbb9945f793c762d6f78} 
+int produto\+Dentro\+Validade (\begin{DoxyParamCaption}\item[{int}]{dias\+Para\+Vencer}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se um produto esta dentro da validade. 
+
+Esta funcao simula a validacao de um produto que ainda pode ser comercializado normalmente.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dias\+Para\+Vencer} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 3 indicando produto dentro da validade. 
+\end{DoxyReturn}
+\Hypertarget{teste___sistema_mercado_8c_ae6e850a4eb98437c1d4f41da1508dfca}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!produtoProximoVencimento@{produtoProximoVencimento}}
+\index{produtoProximoVencimento@{produtoProximoVencimento}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{produtoProximoVencimento()}{produtoProximoVencimento()}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_ae6e850a4eb98437c1d4f41da1508dfca} 
+int produto\+Proximo\+Vencimento (\begin{DoxyParamCaption}\item[{int}]{dias\+Para\+Vencer}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se um produto esta proximo do vencimento. 
+
+Esta funcao simula a situacao em que um produto esta proximo da data de vencimento e deve ser monitorado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dias\+Para\+Vencer} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 2 indicando produto proximo do vencimento. 
+\end{DoxyReturn}
+\Hypertarget{teste___sistema_mercado_8c_aeead8bde599f4687df121eabfac5a8c5}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!produtoVencido@{produtoVencido}}
+\index{produtoVencido@{produtoVencido}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{produtoVencido()}{produtoVencido()}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_aeead8bde599f4687df121eabfac5a8c5} 
+int produto\+Vencido (\begin{DoxyParamCaption}\item[{int}]{dias\+Para\+Vencer}{}\end{DoxyParamCaption})}
+
+
+
+Sistema para Mercado. 
+
+Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao. \begin{DoxyAuthor}{Author}
+Felipe 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2026 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+15.\+2
+\end{DoxyVersion}
+Verifica se um produto esta vencido.
+
+Esta funcao simula a validacao de um produto vencido retornando o codigo correspondente ao status de vencimento.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dias\+Para\+Vencer} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 1 indicando produto vencido. 
+\end{DoxyReturn}
+\Hypertarget{teste___sistema_mercado_8c_a456f0ac01cf8252b2115740facfa4348}\index{teste\_SistemaMercado.c@{teste\_SistemaMercado.c}!validarCodigoProduto@{validarCodigoProduto}}
+\index{validarCodigoProduto@{validarCodigoProduto}!teste\_SistemaMercado.c@{teste\_SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{validarCodigoProduto()}{validarCodigoProduto()}}
+{\footnotesize\ttfamily \label{teste___sistema_mercado_8c_a456f0ac01cf8252b2115740facfa4348} 
+int validar\+Codigo\+Produto (\begin{DoxyParamCaption}\item[{char}]{codigo}{\+[$\,$]\+}\end{DoxyParamCaption})}
+
+
+
+Verifica se o codigo do produto e composto apenas de numeros. 
+
+Esta funcao simula o preenchimento do campo "{}codigo do produto"{} com caracteres invalidos.
+
+
+\begin{DoxyParams}{Parameters}
+{\em codigo} & Codigo do produto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna 0 indicando codigo invalido. 
+\end{DoxyReturn}
