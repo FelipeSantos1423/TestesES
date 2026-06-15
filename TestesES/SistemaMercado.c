@@ -1,33 +1,3 @@
-/*
-====================================================
-ARQUIVO: SistemaMercado.c
-====================================================
-
-Este arquivo contem as funcoes do sistema de estoque
-do supermercado.
-
-Sua responsabilidade e implementar as regras de negocio,
-como:
-
-- cadastrar produtos;
-- remover produtos;
-- atualizar estoque;
-- buscar produtos;
-- consultar informacoes.
-
-As funcoes deste arquivo serao utilizadas e validadas
-pelos testes unitarios presentes no arquivo
-teste_SistemaMercado.c.
-
-Durante a fase de testes, algumas funcoes podem ser
-implementadas como stubs (simulacoes), retornando
-valores pre-definidos para permitir a execucao dos
-testes sem a necessidade de desenvolver o sistema
-completo.
-
-====================================================
-*/
-
 /**
 * @brief Sistema para Mercado
 *
@@ -58,6 +28,7 @@ int produtoVencido(int diasParaVencer)
 	if(diasParaVencer <=0){
 		return 1;
 	}   
+	return 0;
 }
 
 /*Caso de teste 2 - Henrique*/
