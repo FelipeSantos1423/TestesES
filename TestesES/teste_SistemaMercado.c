@@ -1,3 +1,12 @@
+/**
+* @brief Sistema para estoque e controle de validade para Mercado
+*
+* @details Este arquivo contem os casos de teste do sistema.
+* @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, João Guilherme
+* @date 2026
+* @version 1.15.3
+*/
+
 #include <stdio.h>
 #include "minunit.h"
 
@@ -84,7 +93,7 @@ MU_TEST(test_cadastrar_produto_valido)
 /**
  * @brief Verifica o comportamento ao cadastrar um produto sem nome.
  *
- * O teste garante que o sistema trate corretamente um nome vazio.
+ * O teste garante que a mensagem de erro de nome não preenchido seja exebida.
  */
 MU_TEST(test_cadastrar_produto_nome_vazio)
 {
@@ -97,7 +106,7 @@ MU_TEST(test_cadastrar_produto_nome_vazio)
 /**
  * @brief Verifica o comportamento ao cadastrar um produto com quantidade negativa.
  *
- * O teste garante que o sistema identifique quantidades invalidas.
+ * O teste garante que o sistema exiba a mensagem de erro para quantidade negativa
  */
 MU_TEST(test_cadastrar_produto_quantidade_negativa)
 {
