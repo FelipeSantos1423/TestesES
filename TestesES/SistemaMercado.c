@@ -34,7 +34,7 @@ completo.
 * @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
 * @author Felipe
 * @date 2026
-* @version 1.14.2
+* @version 1.15.2
 */
 
 #include <stdio.h>

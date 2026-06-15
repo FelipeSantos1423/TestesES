@@ -207,6 +207,7 @@ MU_TEST(test_cadastrar_produto_estoque_vazio)
     mu_assert_int_eq(0, resultado);
 }
 
+
 MU_TEST_SUITE(test_suite)
 {
     MU_RUN_TEST(test_cadastrar_produto_valido);
@@ -227,6 +228,7 @@ MU_TEST_SUITE(test_suite)
     
     MU_RUN_TEST(test_cadastrar_produto_validade_vazia);
     MU_RUN_TEST(test_cadastrar_produto_estoque_vazio);
+    
 }
 
 int main()
