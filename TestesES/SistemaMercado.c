@@ -2,9 +2,9 @@
 * @brief Sistema para estoque e controle de validade para Mercado
 *
 * @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
-* @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, João Guilherme
+* @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, Joao Guilherme
 * @date 2026
-* @version 2.15.0
+* @version 2.16.0
 */
 
 #include <stdio.h>
@@ -16,18 +16,18 @@
 /**
  * @brief Cadastra um novo produto no sistema.
  *
- * @param nome       Nome do produto. Não pode ser vazio.
+ * @param nome        Nome do produto. Nao pode ser vazio.
  * @param quantidade Quantidade em estoque. Deve ser maior que zero.
- * @param setor      Setor onde o produto está alocado. Não pode ser vazio.
- * @param preco      Preço do produto. Deve ser maior que zero.
- * @param cod_pdt    Código identificador do produto. Deve ser maior que zero.
+ * @param setor      Setor onde o produto esta alocado. Nao pode ser vazio.
+ * @param preco      Preco do produto. Deve ser maior que zero.
+ * @param cod_pdt    Codigo identificador do produto. Deve ser maior que zero.
  *
  * @return 0 se o cadastro foi realizado com sucesso.
  * @return 1 se o nome estiver vazio.
- * @return 2 se a quantidade for inválida (negativa).
+ * @return 2 se a quantidade for invalida (negativa).
  * @return 3 se o setor estiver vazio.
- * @return 4 se o preço for inválido (negativo).
- * @return 5 se o código do produto for inválido (negativo).
+ * @return 4 se o preco for invalido (negativo).
+ * @return 5 se o codigo do produto for invalido (negativo).
  */
 int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int cod_pdt)
 {
@@ -35,16 +35,16 @@ int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int
         return 1; // nome vazio
 
     if(quantidade < 0)
-        return 2; // quantidade inválida
+        return 2; // quantidade invalida
 
     if(strlen(setor) == 0)
         return 3; // setor vazio
 
     if(preco < 0)
-        return 4; // preço inválido
+        return 4; // preco invalido
 
     if(cod_pdt < 0)
-        return 5; // código inválido
+        return 5; // codigo invalido
 
     return 0; // sucesso
 }
@@ -55,7 +55,7 @@ int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int
  * @param nome Nome do produto a ser buscado.
  *
  * @return 0 se o produto for encontrado.
- * @return Valor diferente de 0 se o produto nÃ£o for encontrado.
+ * @return Valor diferente de 0 se o produto nao for encontrado.
  */
 int buscarPorNome(char nome[])
 {
@@ -72,13 +72,13 @@ int buscarPorNome(char nome[])
  * @param categoria Categoria (setor) do produto.
  *
  * @return 0 se o produto for encontrado.
- * @return Valor diferente de 0 se o produto nÃ£o for encontrado.
+ * @return Valor diferente de 0 se o produto nao for encontrado.
  */
-int buscarProduto(char nome[],char categoria[])
+int buscarProduto(char nome[], char categoria[])
 {
     if(strcmp(nome, "Arroz") == 0 &&
        strcmp(categoria, "Graos") == 0
-	   )
+       )
     {
         return 0;
     }
@@ -88,13 +88,13 @@ int buscarProduto(char nome[],char categoria[])
 
 
 
-///////////////////////////////// FunÃ§Ã£o - IGOR //////////////////////////////////////////////////////
+///////////////////////////////// Funcao - IGOR //////////////////////////////////////////////////////
 
 /**
  * @brief Verifica o estado de validade de um produto.
  *
- * @param diasParaVencer NÃºmero de dias restantes atÃ© o vencimento do produto.
- *                       Valor 0 indica produto vencido no dia.
+ * @param diasParaVencer Numero de dias restantes ate o vencimento do produto.
+ * Valor 0 indica produto vencido no dia.
  *
  * @return PRODUTO_VENCIDO (0) se diasParaVencer for igual a 0.
  * @return PRODUTO_PROXIMO (1) se diasParaVencer estiver entre 1 e 15 dias.
@@ -111,26 +111,26 @@ int verificarValidade(int diasParaVencer)
     return PRODUTO_OK;
 }
 
-///////////////////////////////// FunÃ§Ã£o - HENRIQUE //////////////////////////////////////////////////////
+///////////////////////////////// Funcao - HENRIQUE //////////////////////////////////////////////////////
 
 /**
  * @brief Cadastra um novo administrador no sistema.
  *
- * @param nome  Nome do administrador. NÃ£o pode ser vazio nem conter nÃºmeros.
- * @param email E-mail do administrador. NÃ£o pode ser vazio.
- * @param senha Senha do administrador. NÃ£o pode ser vazia e deve ter no mÃ­nimo 6 caracteres.
+ * @param nome  Nome do administrador. Nao pode ser vazio nem conter numeros.
+ * @param email E-mail do administrador. Nao pode ser vazio.
+ * @param senha Senha do administrador. Nao pode ser vazia e deve ter no minimo 6 caracteres.
  *
  * @return 0 se o cadastro foi realizado com sucesso.
  * @return 1 se o nome estiver vazio.
  * @return 2 se o e-mail estiver vazio.
  * @return 3 se a senha estiver vazia.
  * @return 4 se a senha tiver menos de 6 caracteres.
- * @return 5 se o nome contiver caracteres numÃ©ricos.
+ * @return 5 se o nome contiver caracteres numericos.
  */
 int cadastrarAdm(char nome[], char email[], char senha[])
 {
-	int i;
-	
+    int i;
+    
     if(strlen(nome) == 0)
         return 1;
 
@@ -152,5 +152,32 @@ int cadastrarAdm(char nome[], char email[], char senha[])
     return 0;
 }
 
+///////////////////////////////// Funcao - HENRY /////////////////////////////////////////////////
+/**
+ * @brief Realiza o login de um administrador no sistema.
+ *
+ * @param email E-mail do administrador. Nao pode ser vazio.
+ * @param senha Senha do administrador. Nao pode ser vazia.
+ *
+ * @return 0 se o login for realizado com sucesso.
+ * @return 1 se o e-mail estiver vazio.
+ * @return 2 se a senha estiver vazia.
+ * @return 3 se o e-mail nao for encontrado no sistema.
+ * @return 4 se a senha estiver incorreta.
+ */
+int loginAdm(char email[], char senha[])
+{
+    if(strlen(email) == 0)
+        return 1;
 
+    if(strlen(senha) == 0)
+        return 2;
 
+    if(strcmp(email, "fulano@fulano.com") != 0)
+        return 3;
+
+    if(strcmp(senha, "123456") != 0)
+        return 4;
+
+    return 0;
+}
