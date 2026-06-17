@@ -4,7 +4,7 @@
 * @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
 * @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, João Guilherme
 * @date 2026
-* @version 2.13.0
+* @version 2.14.0
 */
 
 #include <stdio.h>
@@ -151,5 +151,6 @@ int cadastrarAdm(char nome[], char email[], char senha[])
 
     return 0;
 }
+
 
 

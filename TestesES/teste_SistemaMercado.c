@@ -289,6 +289,7 @@ MU_TEST(test_cadastrar_adm_senha_curta)
 }
 
 
+
 /** @} */
 /*****************************************************************/
 /** @defgroup Suite Suite de Testes
