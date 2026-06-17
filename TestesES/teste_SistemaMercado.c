@@ -9,7 +9,7 @@
  *
  * @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, João Guilherme
  * @date 2026
- * @version 2.4.0
+ * @version 2.6.0
  */
 
 #include <stdio.h>
@@ -111,6 +111,19 @@ MU_TEST(test_cadastrar_produto_preco_invalido)
     );
 }
 
+/**
+ * @brief Verifica que o sistema rejeita um código de produto inválido.
+ *
+ * @details Códigos negativos não são aceitos como identificadores válidos.
+ *          A função deve retornar erro 5 ao receber um código negativo.
+ */
+MU_TEST(test_cadastrar_produto_codigo_invalido)
+{
+    mu_assert(
+        cadastrarProduto("Arroz", 10, "Estoque", 15.50, -1) == 5,
+        "Código inválido deveria retornar erro 5"
+    );
+}
 
 /** @} */
 
@@ -131,6 +144,7 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_cadastrar_produto_quantidade_invalida);
     MU_RUN_TEST(test_cadastrar_produto_setor_vazio);
 	MU_RUN_TEST(test_cadastrar_produto_preco_invalido);
+	MU_RUN_TEST(test_cadastrar_produto_codigo_invalido);
 
 }
 
