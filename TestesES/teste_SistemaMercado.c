@@ -97,6 +97,19 @@ MU_TEST(test_cadastrar_produto_setor_vazio)
     );
 }
 
+/**
+ * @brief Verifica que o sistema rejeita um preço negativo.
+ *
+ * @details Preços negativos são inválidos para produtos de mercado.
+ *          A função deve retornar erro 4 ao receber valor negativo.
+ */
+MU_TEST(test_cadastrar_produto_preco_invalido)
+{
+    mu_assert(
+        cadastrarProduto("Arroz", 10, "Estoque", -1, 1) == 4,
+        "Preço inválido deveria retornar erro 4"
+    );
+}
 
 
 /** @} */
@@ -117,8 +130,8 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_cadastrar_produto_nome_vazio);
     MU_RUN_TEST(test_cadastrar_produto_quantidade_invalida);
     MU_RUN_TEST(test_cadastrar_produto_setor_vazio);
+	MU_RUN_TEST(test_cadastrar_produto_preco_invalido);
 
-    
 }
 
 /** @} */
