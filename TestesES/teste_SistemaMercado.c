@@ -260,6 +260,20 @@ MU_TEST(test_cadastrar_adm_email_vazio)
     );
 }
 
+/**
+ * @brief Verifica que o sistema rejeita um administrador com senha vazia.
+ *
+ * @details A senha é obrigatória para autenticação no sistema.
+ *          A função deve retornar erro 3 quando uma string vazia for fornecida.
+ */
+MU_TEST(test_cadastrar_adm_senha_vazia)
+{
+    mu_assert(
+        cadastrarAdm("Fulano", "Fulano@email.com", "") == 3,
+        "Senha vazia deveria retornar erro"
+    );
+}
+
 
 /** @} */
 /*****************************************************************/
@@ -293,6 +307,7 @@ MU_TEST_SUITE(test_suite)
      /* Cadastro de Administrador */
     MU_RUN_TEST(test_cadastrar_adm_valido); 
 	MU_RUN_TEST(test_cadastrar_adm_email_vazio);
+	MU_RUN_TEST(test_cadastrar_adm_senha_vazia);
 }
 
 /** @} */
