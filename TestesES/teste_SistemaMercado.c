@@ -33,6 +33,7 @@ int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int
 int buscarPorNome(char nome[]);
 int buscarProduto(char nome[], char categoria[]);
 int verificarValidade(int diasParaVencer);
+int cadastrarAdm(char nome[], char email[], char senha[]);
 
 /** @} */
 
@@ -224,6 +225,30 @@ MU_TEST(test_produto_ok)
 ///////////////////////////////////////////////////////////////
 
 /** @} */
+
+/*****************************************************************/
+/** @defgroup Testes Casos de Teste
+ *  @brief Testes para a funÃ§Ã£o cadastrarAdm().
+ *  @{
+ */
+
+/**
+ * @brief Verifica o cadastro de um administrador com dados vÃ¡lidos.
+ *
+ * @details O teste garante que o sistema aceite o cadastro quando nome,
+ *          e-mail e senha estiverem preenchidos corretamente.
+ */
+MU_TEST(test_cadastrar_adm_valido)
+{
+    mu_assert(
+        cadastrarAdm("Fulano", "Fulano@email.com", "123456") == 0,
+        "Administrador valido deveria ser cadastrado"
+    );
+}
+
+
+
+/** @} */
 /*****************************************************************/
 /** @defgroup Suite Suite de Testes
  *  @brief Configuração e execução de todos os casos de teste do sistema.
@@ -251,6 +276,9 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_produto_vencido); //USAREMOS PARA APRESENTAR
     MU_RUN_TEST(test_produto_proximo);
     MU_RUN_TEST(test_produto_ok);
+    
+     /* Cadastro de Administrador */
+    MU_RUN_TEST(test_cadastrar_adm_valido); 
 
 }
 

@@ -4,7 +4,7 @@
 * @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
 * @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, Jo�o Guilherme
 * @date 2026
-* @version 2.7.0
+* @version 2.9.0
 */
 
 #include <stdio.h>
@@ -109,6 +109,47 @@ int verificarValidade(int diasParaVencer)
         return PRODUTO_PROXIMO;
 
     return PRODUTO_OK;
+}
+
+///////////////////////////////// Função - HENRIQUE //////////////////////////////////////////////////////
+
+/**
+ * @brief Cadastra um novo administrador no sistema.
+ *
+ * @param nome  Nome do administrador. Não pode ser vazio nem conter números.
+ * @param email E-mail do administrador. Não pode ser vazio.
+ * @param senha Senha do administrador. Não pode ser vazia e deve ter no mínimo 6 caracteres.
+ *
+ * @return 0 se o cadastro foi realizado com sucesso.
+ * @return 1 se o nome estiver vazio.
+ * @return 2 se o e-mail estiver vazio.
+ * @return 3 se a senha estiver vazia.
+ * @return 4 se a senha tiver menos de 6 caracteres.
+ * @return 5 se o nome contiver caracteres numéricos.
+ */
+int cadastrarAdm(char nome[], char email[], char senha[])
+{
+	int i;
+	
+    if(strlen(nome) == 0)
+        return 1;
+
+    if(strlen(email) == 0)
+        return 2;
+
+    if(strlen(senha) == 0)
+        return 3;
+
+    if(strlen(senha) < 6)
+        return 4;
+
+    for(i = 0; nome[i] != '\0'; i++)
+    {
+        if(nome[i] >= '0' && nome[i] <= '9')
+            return 5;
+    }
+
+    return 0;
 }
 
 
