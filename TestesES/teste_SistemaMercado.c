@@ -274,6 +274,20 @@ MU_TEST(test_cadastrar_adm_senha_vazia)
     );
 }
 
+/**
+ * @brief Verifica que o sistema rejeita senhas com menos de 6 caracteres.
+ *
+ * @details Por política de segurança, senhas devem ter no mínimo 6 caracteres.
+ *          A função deve retornar erro 4 quando a senha for muito curta.
+ */
+MU_TEST(test_cadastrar_adm_senha_curta)
+{
+    mu_assert(
+        cadastrarAdm("Fulano", "Fulano@email.com", "12345") == 4,
+        "Senha com menos de 6 caracteres deveria retornar erro"
+    );
+}
+
 
 /** @} */
 /*****************************************************************/
@@ -308,6 +322,7 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_cadastrar_adm_valido); 
 	MU_RUN_TEST(test_cadastrar_adm_email_vazio);
 	MU_RUN_TEST(test_cadastrar_adm_senha_vazia);
+	MU_RUN_TEST(test_cadastrar_adm_senha_curta); //USAREMOS PARA APRESENTARv
 }
 
 /** @} */
