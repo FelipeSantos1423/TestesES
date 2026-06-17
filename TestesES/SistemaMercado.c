@@ -50,3 +50,5 @@ int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int
 }
 
 
+
+
