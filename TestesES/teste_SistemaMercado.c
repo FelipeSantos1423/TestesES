@@ -246,6 +246,19 @@ MU_TEST(test_cadastrar_adm_valido)
     );
 }
 
+/**
+ * @brief Verifica que o sistema rejeita um administrador com e-mail vazio.
+ *
+ * @details O campo e-mail é obrigatório para identificação e login.
+ *          A função deve retornar erro 2 quando uma string vazia for fornecida.
+ */
+MU_TEST(test_cadastrar_adm_email_vazio)
+{
+    mu_assert(
+        cadastrarAdm("Fulano", "", "123456") == 2,
+        "Email vazio deveria retornar erro"
+    );
+}
 
 
 /** @} */
@@ -279,7 +292,7 @@ MU_TEST_SUITE(test_suite)
     
      /* Cadastro de Administrador */
     MU_RUN_TEST(test_cadastrar_adm_valido); 
-
+	MU_RUN_TEST(test_cadastrar_adm_email_vazio);
 }
 
 /** @} */
