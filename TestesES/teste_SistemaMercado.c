@@ -30,6 +30,8 @@
  */
 
 int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int cod_pdt);
+int buscarPorNome(char nome[]);
+int buscarProduto(char nome[], char categoria[]);
 
 /** @} */
 
@@ -125,8 +127,48 @@ MU_TEST(test_cadastrar_produto_codigo_invalido)
     );
 }
 
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
 /** @} */
 
+/*****************************************************************/
+/** @defgroup Testes Casos de Teste
+ *  @brief Testes para as funÃ§Ãµes buscarPorNome() e buscarProduto().
+ *  @{
+ */
+
+/**
+ * @brief Verifica a busca de um produto pelo nome.
+ *
+ * @details O sistema deve localizar o produto "Arroz" previamente cadastrado
+ *          e retornar 0 como indicativo de sucesso.
+ */
+MU_TEST(test_busca_por_nome)
+{
+    mu_assert_int_eq(
+        0,
+        buscarPorNome("Arroz")
+    );
+}
+
+/**
+ * @brief Verifica a busca completa de um produto por nome e categoria.
+ *
+ * @details A combinaÃ§Ã£o de nome "Arroz" e categoria "Graos" deve localizar
+ *          o produto no sistema e retornar 0 como indicativo de sucesso.
+ */
+MU_TEST(test_busca_produto_completo)
+{
+    int resultado = buscarProduto("Arroz", "Graos");
+
+    mu_assert_int_eq(
+        0,
+        resultado
+    );
+}
+
+/** @} */
 /*****************************************************************/
 /** @defgroup Suite Suite de Testes
  *  @brief Configuração e execução de todos os casos de teste do sistema.
@@ -139,12 +181,16 @@ MU_TEST(test_cadastrar_produto_codigo_invalido)
 MU_TEST_SUITE(test_suite)
 {
     /* Cadastro de Produto */
-    MU_RUN_TEST(test_cadastrar_produto_valido);
+    MU_RUN_TEST(test_cadastrar_produto_valido); //USAREMOS PARA APRESENTAR
     MU_RUN_TEST(test_cadastrar_produto_nome_vazio);
     MU_RUN_TEST(test_cadastrar_produto_quantidade_invalida);
     MU_RUN_TEST(test_cadastrar_produto_setor_vazio);
 	MU_RUN_TEST(test_cadastrar_produto_preco_invalido);
 	MU_RUN_TEST(test_cadastrar_produto_codigo_invalido);
+	
+	/* Busca de Produto */
+    MU_RUN_TEST(test_busca_por_nome); //USAREMOS PARA APRESENTAR
+    MU_RUN_TEST(test_busca_produto_completo);
 
 }
 

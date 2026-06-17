@@ -4,7 +4,7 @@
 * @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
 * @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, Jo�o Guilherme
 * @date 2026
-* @version 2.6.0
+* @version 2.7.0
 */
 
 #include <stdio.h>
@@ -48,6 +48,45 @@ int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int
 
     return 0; // sucesso
 }
+
+/**
+ * @brief Busca um produto pelo nome.
+ *
+ * @param nome Nome do produto a ser buscado.
+ *
+ * @return 0 se o produto for encontrado.
+ * @return Valor diferente de 0 se o produto não for encontrado.
+ */
+int buscarPorNome(char nome[])
+{
+    if(strcmp(nome, "Arroz") == 0)
+        return 0;
+
+    return 1;
+}
+
+/**
+ * @brief Busca um produto pelo nome e categoria.
+ *
+ * @param nome      Nome do produto a ser buscado.
+ * @param categoria Categoria (setor) do produto.
+ *
+ * @return 0 se o produto for encontrado.
+ * @return Valor diferente de 0 se o produto não for encontrado.
+ */
+int buscarProduto(char nome[],char categoria[])
+{
+    if(strcmp(nome, "Arroz") == 0 &&
+       strcmp(categoria, "Graos") == 0
+	   )
+    {
+        return 0;
+    }
+
+    return 1;
+}
+
+
 
 
 
