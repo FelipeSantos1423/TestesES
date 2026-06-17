@@ -32,6 +32,7 @@
 int cadastrarProduto(char nome[], int quantidade, char setor[], float preco, int cod_pdt);
 int buscarPorNome(char nome[]);
 int buscarProduto(char nome[], char categoria[]);
+int verificarValidade(int diasParaVencer);
 
 /** @} */
 
@@ -169,6 +170,60 @@ MU_TEST(test_busca_produto_completo)
 }
 
 /** @} */
+
+/*****************************************************************/
+/** @defgroup Testes Validade Casos de Teste 
+ *  @brief Testes para a função verificarValidade().
+ *  @{
+ */
+
+/**
+ * @brief Verifica que um produto com zero dias para vencer é classificado como vencido.
+ *
+ * @details Produto com diasParaVencer igual a 0 deve retornar PRODUTO_VENCIDO (0),
+ *          indicando que o prazo de validade já se esgotou.
+ */
+MU_TEST(test_produto_vencido)
+{
+    mu_assert_int_eq(
+        PRODUTO_VENCIDO,
+        verificarValidade(0)
+    );
+}
+
+/**
+ * @brief Verifica que um produto com 14 dias para vencer é classificado como próximo do vencimento.
+ *
+ * @details Produto com diasParaVencer igual a 14 deve retornar PRODUTO_PROXIMO (1),
+ *          indicando que o produto está dentro da janela de alerta de vencimento.
+ */
+MU_TEST(test_produto_proximo)
+{
+    mu_assert_int_eq(
+        PRODUTO_PROXIMO,
+        verificarValidade(14)
+    );
+}
+
+/**
+ * @brief Verifica que um produto com 30 dias para vencer é classificado como dentro do prazo.
+ *
+ * @details Produto com diasParaVencer igual a 30 deve retornar PRODUTO_OK (2),
+ *          indicando que o produto ainda está dentro do prazo de validade normal.
+ */
+MU_TEST(test_produto_ok)
+{
+    mu_assert_int_eq(
+        PRODUTO_OK,
+        verificarValidade(30)
+    );
+}
+
+
+////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+
+/** @} */
 /*****************************************************************/
 /** @defgroup Suite Suite de Testes
  *  @brief Configura��o e execu��o de todos os casos de teste do sistema.
@@ -191,6 +246,11 @@ MU_TEST_SUITE(test_suite)
 	/* Busca de Produto */
     MU_RUN_TEST(test_busca_por_nome); //USAREMOS PARA APRESENTAR
     MU_RUN_TEST(test_busca_produto_completo);
+    
+    /* Verificação de Validade */
+    MU_RUN_TEST(test_produto_vencido); //USAREMOS PARA APRESENTAR
+    MU_RUN_TEST(test_produto_proximo);
+    MU_RUN_TEST(test_produto_ok);
 
 }
 

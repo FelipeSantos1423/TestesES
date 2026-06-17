@@ -88,6 +88,27 @@ int buscarProduto(char nome[],char categoria[])
 
 
 
+///////////////////////////////// Função - IGOR //////////////////////////////////////////////////////
 
+/**
+ * @brief Verifica o estado de validade de um produto.
+ *
+ * @param diasParaVencer Número de dias restantes até o vencimento do produto.
+ *                       Valor 0 indica produto vencido no dia.
+ *
+ * @return PRODUTO_VENCIDO (0) se diasParaVencer for igual a 0.
+ * @return PRODUTO_PROXIMO (1) se diasParaVencer estiver entre 1 e 15 dias.
+ * @return PRODUTO_OK      (2) se diasParaVencer for maior que 15 dias.
+ */
+int verificarValidade(int diasParaVencer)
+{
+    if(diasParaVencer <= 0)
+        return PRODUTO_VENCIDO;
+
+    if(diasParaVencer <= 14)
+        return PRODUTO_PROXIMO;
+
+    return PRODUTO_OK;
+}
 
 
