@@ -9,7 +9,7 @@
  *
  * @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, João Guilherme
  * @date 2026
- * @version 2.3.0
+ * @version 2.4.0
  */
 
 #include <stdio.h>
@@ -83,6 +83,22 @@ MU_TEST(test_cadastrar_produto_quantidade_invalida)
     );
 }
 
+/**
+ * @brief Verifica que o sistema rejeita um produto sem setor informado.
+ *
+ * @details O campo setor é obrigatório para localização do produto no estoque.
+ *          A função deve retornar erro 3 quando uma string vazia for fornecida.
+ */
+MU_TEST(test_cadastrar_produto_setor_vazio)
+{
+    mu_assert(
+        cadastrarProduto("Arroz", 10, "", 15.50, 1) == 3,
+        "Setor vazio deveria retornar erro 3"
+    );
+}
+
+
+
 /** @} */
 
 /*****************************************************************/
@@ -100,6 +116,7 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_cadastrar_produto_valido);
     MU_RUN_TEST(test_cadastrar_produto_nome_vazio);
     MU_RUN_TEST(test_cadastrar_produto_quantidade_invalida);
+    MU_RUN_TEST(test_cadastrar_produto_setor_vazio);
 
     
 }
