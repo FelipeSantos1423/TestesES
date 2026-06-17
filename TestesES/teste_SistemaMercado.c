@@ -289,6 +289,20 @@ MU_TEST(test_cadastrar_adm_senha_curta)
 }
 
 
+/**
+ * @brief Verifica que o sistema rejeita nomes de administrador com números.
+ *
+ * @details Nomes de administradores devem conter apenas letras.
+ *          A função deve retornar erro 5 quando o nome contiver dígitos numéricos.
+ */
+MU_TEST(test_cadastrar_adm_nome_com_numero)
+{
+    mu_assert(
+        cadastrarAdm("Fulano123", "Fulano@email.com", "123456") == 5,
+        "Nome contendo numeros deveria retornar erro"
+    );
+}
+
 
 /** @} */
 /*****************************************************************/
@@ -323,7 +337,8 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_cadastrar_adm_valido); 
 	MU_RUN_TEST(test_cadastrar_adm_email_vazio);
 	MU_RUN_TEST(test_cadastrar_adm_senha_vazia);
-	MU_RUN_TEST(test_cadastrar_adm_senha_curta); //USAREMOS PARA APRESENTARv
+	MU_RUN_TEST(test_cadastrar_adm_senha_curta); //USAREMOS PARA APRESENTAR
+	MU_RUN_TEST(test_cadastrar_adm_nome_com_numero);
 }
 
 /** @} */
