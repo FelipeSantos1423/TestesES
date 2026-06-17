@@ -9,7 +9,7 @@
  *
  * @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, João Guilherme
  * @date 2026
- * @version 2.2.0
+ * @version 2.3.0
  */
 
 #include <stdio.h>
@@ -68,6 +68,21 @@ MU_TEST(test_cadastrar_produto_nome_vazio)
     );
 }
 
+
+/**
+ * @brief Verifica que o sistema rejeita uma quantidade negativa.
+ *
+ * @details Quantidades negativas são semanticamente inválidas para estoque.
+ *          A função deve retornar erro 2 ao receber valor negativo.
+ */
+MU_TEST(test_cadastrar_produto_quantidade_invalida)
+{
+    mu_assert(
+        cadastrarProduto("Arroz", -1, "Estoque", 15.50, 1) == 2,
+        "Quantidade inválida deveria retornar erro 2"
+    );
+}
+
 /** @} */
 
 /*****************************************************************/
@@ -84,6 +99,8 @@ MU_TEST_SUITE(test_suite)
     /* Cadastro de Produto */
     MU_RUN_TEST(test_cadastrar_produto_valido);
     MU_RUN_TEST(test_cadastrar_produto_nome_vazio);
+    MU_RUN_TEST(test_cadastrar_produto_quantidade_invalida);
+
     
 }
 
