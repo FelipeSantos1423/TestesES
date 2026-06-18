@@ -9,7 +9,7 @@
  *
  * @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, Joao Guilherme
  * @date 2026
- * @version 2.17.0
+ * @version 2.18.0
  */
 
 #include <stdio.h>
@@ -409,6 +409,21 @@ MU_TEST(test_setor_valido)
     );
 }
 
+/**
+ * @brief Verifica que o sistema rejeita um setor com nome vazio.
+ *
+ * @details O campo nome é obrigatório para identificação do setor.
+ *          A função deve retornar erro 1 quando o nome estiver vazio.
+ */
+MU_TEST(test_setor_nome_vazio)
+{
+    mu_assert_int_eq(
+        1,
+        cadastrarSetor("", "Corredor A")
+    );
+}
+
+
 /** @} */
 
 /*****************************************************************/
@@ -458,6 +473,7 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_login_senha_errada);
     
     MU_RUN_TEST(test_setor_valido);
+    MU_RUN_TEST(test_setor_nome_vazio);
 }
 
 /** @} */

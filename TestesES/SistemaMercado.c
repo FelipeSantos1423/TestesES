@@ -4,7 +4,7 @@
 * @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
 * @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, Joao Guilherme
 * @date 2026
-* @version 2.17.0
+* @version 2.8.0
 */
 
 #include <stdio.h>
