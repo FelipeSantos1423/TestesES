@@ -4,7 +4,7 @@
 * @details Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao.
 * @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, Joao Guilherme
 * @date 2026
-* @version 2.16.0
+* @version 2.17.0
 */
 
 #include <stdio.h>
@@ -178,6 +178,28 @@ int loginAdm(char email[], char senha[])
 
     if(strcmp(senha, "123456") != 0)
         return 4;
+
+    return 0;
+}
+
+///////////////////////////////// Funcao - JOAO GUILHERME /////////////////////////////////////////////////
+/**
+ * @brief Cadastra um novo setor no sistema.
+ *
+ * @param nome  Nome do setor. Não pode ser vazio.
+ * @param local Localização física do setor. Não pode ser vazia.
+ *
+ * @return 0 se o cadastro foi realizado com sucesso.
+ * @return 1 se o nome estiver vazio.
+ * @return 2 se o local estiver vazio.
+ */
+int cadastrarSetor(char nome[], char local[])
+{
+    if(strlen(nome) == 0)
+        return 1;
+
+    if(strlen(local) == 0)
+        return 2;
 
     return 0;
 }

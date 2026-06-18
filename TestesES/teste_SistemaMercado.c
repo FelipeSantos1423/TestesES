@@ -9,7 +9,7 @@
  *
  * @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, Joao Guilherme
  * @date 2026
- * @version 2.7.0
+ * @version 2.17.0
  */
 
 #include <stdio.h>
@@ -35,6 +35,7 @@ int buscarProduto(char nome[], char categoria[]);
 int verificarValidade(int diasParaVencer);
 int cadastrarAdm(char nome[], char email[], char senha[]);
 int loginAdm(char email[], char senha[]);
+int cadastrarSetor(char nome[], char local[]);
 
 /** @} */
 
@@ -385,6 +386,28 @@ MU_TEST(test_login_senha_errada)
     );
 }
 
+/** @} */
+
+/*****************************************************************/
+/** @defgroup Testes Casos de Teste
+ *  @brief Testes para a função cadastrarSetor().
+ *  @{
+ */
+
+/**
+ * @brief Verifica o cadastro de um setor com dados válidos.
+ *
+ * @details O teste garante que o sistema aceite o cadastro quando nome
+ *          e local estiverem preenchidos corretamente.
+ *          Setor: "Graos", local: "Corredor A".
+ */
+MU_TEST(test_setor_valido)
+{
+    mu_assert_int_eq(
+        0,
+        cadastrarSetor("Graos", "Corredor A")
+    );
+}
 
 /** @} */
 
@@ -433,6 +456,8 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_login_senha_vazia);
     MU_RUN_TEST(test_login_email_inexistente);
     MU_RUN_TEST(test_login_senha_errada);
+    
+    MU_RUN_TEST(test_setor_valido);
 }
 
 /** @} */
