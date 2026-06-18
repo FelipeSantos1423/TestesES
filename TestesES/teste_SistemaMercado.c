@@ -9,7 +9,7 @@
  *
  * @authors Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, Joao Guilherme
  * @date 2026
- * @version 2.18.0
+ * @version 2.19.0
  */
 
 #include <stdio.h>
@@ -423,6 +423,19 @@ MU_TEST(test_setor_nome_vazio)
     );
 }
 
+/**
+ * @brief Verifica que o sistema rejeita um setor sem local informado.
+ *
+ * @details O campo local é obrigatório para localização física do setor.
+ *          A função deve retornar erro 2 quando o local estiver vazio.
+ */
+MU_TEST(test_setor_local_vazio)
+{
+    mu_assert_int_eq(
+        2,
+        cadastrarSetor("Graos", "")
+    );
+}
 
 /** @} */
 
@@ -470,10 +483,12 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_login_email_vazio);
     MU_RUN_TEST(test_login_senha_vazia);
     MU_RUN_TEST(test_login_email_inexistente);
-    MU_RUN_TEST(test_login_senha_errada);
+    MU_RUN_TEST(test_login_senha_errada); //USAREMOS PARA APRESENTAR
     
+    /*Cadastro de Setores*/
     MU_RUN_TEST(test_setor_valido);
     MU_RUN_TEST(test_setor_nome_vazio);
+    MU_RUN_TEST(test_setor_local_vazio);
 }
 
 /** @} */
