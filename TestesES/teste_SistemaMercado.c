@@ -427,7 +427,7 @@ MU_TEST_SUITE(test_suite)
     MU_RUN_TEST(test_cadastrar_adm_nome_com_numero);
     
     
-    /*Login de Administrador*/
+    /*Login de administrador*/
      MU_RUN_TEST(test_login_valido);
     MU_RUN_TEST(test_login_email_vazio);
     MU_RUN_TEST(test_login_senha_vazia);
