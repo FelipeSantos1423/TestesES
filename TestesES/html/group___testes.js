@@ -1,15 +1,5 @@
-var teste___sistema_mercado_8c =
+var group___testes =
 [
-    [ "PRODUTO_OK", "group___status_validade.html#gafa16352eafc40bf590c8563ed6b300c9", null ],
-    [ "PRODUTO_PROXIMO", "group___status_validade.html#ga12952076901e5c7450278a0eac69e1cb", null ],
-    [ "PRODUTO_VENCIDO", "group___status_validade.html#ga833f4d26585976b0350734e4eeff7689", null ],
-    [ "buscarPorNome", "group___prototipos.html#gac489f13b760e2bcc8417ce2cc149f2fe", null ],
-    [ "buscarProduto", "group___prototipos.html#ga850c880f0f78f516e98a73340962366d", null ],
-    [ "cadastrarAdm", "group___prototipos.html#gac7fe3bf6f716fe2c8d49891bb68b552e", null ],
-    [ "cadastrarProduto", "group___prototipos.html#gaaa445f52fc9aef62ad139bc837b11c3f", null ],
-    [ "cadastrarSetor", "group___prototipos.html#gae169afcbe5004861402ea67ca0286c4a", null ],
-    [ "loginAdm", "group___prototipos.html#gaaae701564dc302e8f1fa084634a09b25", null ],
-    [ "main", "teste___sistema_mercado_8c.html#a840291bc02cba5474a4cb46a9b9566fe", null ],
     [ "MU_TEST", "group___testes.html#gaf5efe3075d3c8e63719781bb565353df", null ],
     [ "MU_TEST", "group___testes.html#ga671141a66232feb0a288115f5c86a6e7", null ],
     [ "MU_TEST", "group___testes.html#ga714ae461b26946773ce24835377f1c29", null ],
@@ -33,7 +23,5 @@ var teste___sistema_mercado_8c =
     [ "MU_TEST", "group___testes.html#ga35d02e47199d7353434fd842692997e0", null ],
     [ "MU_TEST", "group___testes.html#ga890161bbe9d38b1ee82ead20afeecca8", null ],
     [ "MU_TEST", "group___testes.html#ga0bdb03504b7c466d8380d83bfc11de17", null ],
-    [ "MU_TEST", "group___testes.html#ga2808136f547785176d5d1fd1a4223d76", null ],
-    [ "MU_TEST_SUITE", "group___suite.html#ga2bb1dcd555d1f587daba80d8291163a8", null ],
-    [ "verificarValidade", "group___prototipos.html#ga5d3c611004788b0e90719d3219d3f385", null ]
+    [ "MU_TEST", "group___testes.html#ga2808136f547785176d5d1fd1a4223d76", null ]
 ];

@@ -1,8 +1,5 @@
-var _sistema_mercado_8c =
+var group___prototipos =
 [
-    [ "PRODUTO_OK", "_sistema_mercado_8c.html#afa16352eafc40bf590c8563ed6b300c9", null ],
-    [ "PRODUTO_PROXIMO", "_sistema_mercado_8c.html#a12952076901e5c7450278a0eac69e1cb", null ],
-    [ "PRODUTO_VENCIDO", "_sistema_mercado_8c.html#a833f4d26585976b0350734e4eeff7689", null ],
     [ "buscarPorNome", "group___prototipos.html#gac489f13b760e2bcc8417ce2cc149f2fe", null ],
     [ "buscarProduto", "group___prototipos.html#ga850c880f0f78f516e98a73340962366d", null ],
     [ "cadastrarAdm", "group___prototipos.html#gac7fe3bf6f716fe2c8d49891bb68b552e", null ],

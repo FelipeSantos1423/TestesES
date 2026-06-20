@@ -121,464 +121,75 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_sistema_merca
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a833f4d26585976b0350734e4eeff7689" id="r_a833f4d26585976b0350734e4eeff7689"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a833f4d26585976b0350734e4eeff7689">PRODUTO_VENCIDO</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a833f4d26585976b0350734e4eeff7689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sistema para estoque e controle de validade para Mercado.  <br /></td></tr>
+<tr class="memitem:a12952076901e5c7450278a0eac69e1cb" id="r_a12952076901e5c7450278a0eac69e1cb"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a12952076901e5c7450278a0eac69e1cb">PRODUTO_PROXIMO</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:afa16352eafc40bf590c8563ed6b300c9" id="r_afa16352eafc40bf590c8563ed6b300c9"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#afa16352eafc40bf590c8563ed6b300c9">PRODUTO_OK</a>&#160;&#160;&#160;2</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aeead8bde599f4687df121eabfac5a8c5" id="r_aeead8bde599f4687df121eabfac5a8c5"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aeead8bde599f4687df121eabfac5a8c5">produtoVencido</a> (int diasParaVencer)</td></tr>
-<tr class="memdesc:aeead8bde599f4687df121eabfac5a8c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sistema para Mercado.  <br /></td></tr>
-<tr class="memitem:ae6e850a4eb98437c1d4f41da1508dfca" id="r_ae6e850a4eb98437c1d4f41da1508dfca"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ae6e850a4eb98437c1d4f41da1508dfca">produtoProximoVencimento</a> (int diasParaVencer)</td></tr>
-<tr class="memdesc:ae6e850a4eb98437c1d4f41da1508dfca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se um produto esta proximo do vencimento.  <br /></td></tr>
-<tr class="memitem:aa2c83744c4dbdbb9945f793c762d6f78" id="r_aa2c83744c4dbdbb9945f793c762d6f78"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aa2c83744c4dbdbb9945f793c762d6f78">produtoDentroValidade</a> (int diasParaVencer)</td></tr>
-<tr class="memdesc:aa2c83744c4dbdbb9945f793c762d6f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se um produto esta dentro da validade.  <br /></td></tr>
-<tr class="memitem:aaa445f52fc9aef62ad139bc837b11c3f" id="r_aaa445f52fc9aef62ad139bc837b11c3f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aaa445f52fc9aef62ad139bc837b11c3f">cadastrarProduto</a> (char nome[], int quantidade, char setor[], float preco, int cod_pdt)</td></tr>
-<tr class="memdesc:aaa445f52fc9aef62ad139bc837b11c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se um produto esta sendo cadastrado corretamente.  <br /></td></tr>
-<tr class="memitem:a79a8f3dc2e50509f7c1043fd85b7daf8" id="r_a79a8f3dc2e50509f7c1043fd85b7daf8"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a79a8f3dc2e50509f7c1043fd85b7daf8">cadastrarProdutoSemNome</a> (char nome[])</td></tr>
-<tr class="memdesc:a79a8f3dc2e50509f7c1043fd85b7daf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se um produto esta sendo cadastrado incorretamente.  <br /></td></tr>
-<tr class="memitem:a0f78e2d80cadf0a76c8cd1c2c08e1ed0" id="r_a0f78e2d80cadf0a76c8cd1c2c08e1ed0"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a0f78e2d80cadf0a76c8cd1c2c08e1ed0">cadastrarProdutoQuantidadeNegativa</a> (int quantidade)</td></tr>
-<tr class="memdesc:a0f78e2d80cadf0a76c8cd1c2c08e1ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se um produto esta sendo cadastrado com quantidade invalida.  <br /></td></tr>
-<tr class="memitem:a456f0ac01cf8252b2115740facfa4348" id="r_a456f0ac01cf8252b2115740facfa4348"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a456f0ac01cf8252b2115740facfa4348">validarCodigoProduto</a> (char codigo[])</td></tr>
-<tr class="memdesc:a456f0ac01cf8252b2115740facfa4348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o codigo do produto e composto apenas de numeros.  <br /></td></tr>
-<tr class="memitem:a026c1bf7f220d60304a46b7b8b3d691d" id="r_a026c1bf7f220d60304a46b7b8b3d691d"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a026c1bf7f220d60304a46b7b8b3d691d">cadastrarProdutoSemSetor</a> (char setor[])</td></tr>
-<tr class="memdesc:a026c1bf7f220d60304a46b7b8b3d691d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o produto esta sendo cadastrado com o setor vazio.  <br /></td></tr>
-<tr class="memitem:a7e3f40e389324c0666f7ab62d08fb9ed" id="r_a7e3f40e389324c0666f7ab62d08fb9ed"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a7e3f40e389324c0666f7ab62d08fb9ed">cadastrarProdutoQuantidadeNaoNumerica</a> (char quantidade[])</td></tr>
-<tr class="memdesc:a7e3f40e389324c0666f7ab62d08fb9ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se a quantidade do produto possui valor nao numerico.  <br /></td></tr>
-<tr class="memitem:ab6c9bd3ede503f38974bdcf0ef522297" id="r_ab6c9bd3ede503f38974bdcf0ef522297"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ab6c9bd3ede503f38974bdcf0ef522297">cadastrarProdutoPrecoVazio</a> (float preco)</td></tr>
-<tr class="memdesc:ab6c9bd3ede503f38974bdcf0ef522297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o preco do produto foi informado.  <br /></td></tr>
-<tr class="memitem:aa3f2a961cb477e425dfe2619aef57e56" id="r_aa3f2a961cb477e425dfe2619aef57e56"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aa3f2a961cb477e425dfe2619aef57e56">cadastrarProdutoPrecoNegativo</a> (float preco)</td></tr>
-<tr class="memdesc:aa3f2a961cb477e425dfe2619aef57e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o produto pode ser cadastrado com um valor negativo.  <br /></td></tr>
-<tr class="memitem:aaada0eb5f5862e28ba6e8103cf7e309d" id="r_aaada0eb5f5862e28ba6e8103cf7e309d"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aaada0eb5f5862e28ba6e8103cf7e309d">cadastrarProdutoCodigoVazio</a> (int codigo)</td></tr>
-<tr class="memdesc:aaada0eb5f5862e28ba6e8103cf7e309d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o codigo do produto foi informado.  <br /></td></tr>
-<tr class="memitem:a34c969f50585fa7571d8d69839635c13" id="r_a34c969f50585fa7571d8d69839635c13"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a34c969f50585fa7571d8d69839635c13">cadastrarProdutoValidadeVazia</a> (int validade)</td></tr>
-<tr class="memdesc:a34c969f50585fa7571d8d69839635c13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se a validade do produto foi informada.  <br /></td></tr>
-<tr class="memitem:ae39b7528b103c63cce0c967a6c808201" id="r_ae39b7528b103c63cce0c967a6c808201"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ae39b7528b103c63cce0c967a6c808201">cadastrarProdutoEstoqueNegativo</a> (int estoque)</td></tr>
-<tr class="memdesc:ae39b7528b103c63cce0c967a6c808201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se a quantidade em estoque foi informada.  <br /></td></tr>
-<tr class="memitem:afc3f74d2e0aba3893fd2ac98a075b552" id="r_afc3f74d2e0aba3893fd2ac98a075b552"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#afc3f74d2e0aba3893fd2ac98a075b552">cadastrarProdutoEstoqueVazio</a> (int estoque)</td></tr>
+<tr class="memitem:gaaa445f52fc9aef62ad139bc837b11c3f" id="r_gaaa445f52fc9aef62ad139bc837b11c3f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group___prototipos.html#gaaa445f52fc9aef62ad139bc837b11c3f">cadastrarProduto</a> (char nome[], int quantidade, char setor[], float preco, int cod_pdt)</td></tr>
+<tr class="memdesc:gaaa445f52fc9aef62ad139bc837b11c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cadastra um novo produto no sistema.  <br /></td></tr>
+<tr class="memitem:gac489f13b760e2bcc8417ce2cc149f2fe" id="r_gac489f13b760e2bcc8417ce2cc149f2fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group___prototipos.html#gac489f13b760e2bcc8417ce2cc149f2fe">buscarPorNome</a> (char nome[])</td></tr>
+<tr class="memdesc:gac489f13b760e2bcc8417ce2cc149f2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca um produto pelo nome.  <br /></td></tr>
+<tr class="memitem:ga850c880f0f78f516e98a73340962366d" id="r_ga850c880f0f78f516e98a73340962366d"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group___prototipos.html#ga850c880f0f78f516e98a73340962366d">buscarProduto</a> (char nome[], char categoria[])</td></tr>
+<tr class="memdesc:ga850c880f0f78f516e98a73340962366d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca um produto pelo nome e categoria.  <br /></td></tr>
+<tr class="memitem:ga5d3c611004788b0e90719d3219d3f385" id="r_ga5d3c611004788b0e90719d3219d3f385"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group___prototipos.html#ga5d3c611004788b0e90719d3219d3f385">verificarValidade</a> (int diasParaVencer)</td></tr>
+<tr class="memdesc:ga5d3c611004788b0e90719d3219d3f385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica o estado de validade de um produto.  <br /></td></tr>
+<tr class="memitem:gac7fe3bf6f716fe2c8d49891bb68b552e" id="r_gac7fe3bf6f716fe2c8d49891bb68b552e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group___prototipos.html#gac7fe3bf6f716fe2c8d49891bb68b552e">cadastrarAdm</a> (char nome[], char email[], char senha[])</td></tr>
+<tr class="memdesc:gac7fe3bf6f716fe2c8d49891bb68b552e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cadastra um novo administrador no sistema.  <br /></td></tr>
+<tr class="memitem:gaaae701564dc302e8f1fa084634a09b25" id="r_gaaae701564dc302e8f1fa084634a09b25"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group___prototipos.html#gaaae701564dc302e8f1fa084634a09b25">loginAdm</a> (char email[], char senha[])</td></tr>
+<tr class="memdesc:gaaae701564dc302e8f1fa084634a09b25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza o login de um administrador no sistema.  <br /></td></tr>
+<tr class="memitem:gae169afcbe5004861402ea67ca0286c4a" id="r_gae169afcbe5004861402ea67ca0286c4a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group___prototipos.html#gae169afcbe5004861402ea67ca0286c4a">cadastrarSetor</a> (char nome[], char local[])</td></tr>
+<tr class="memdesc:gae169afcbe5004861402ea67ca0286c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cadastra um novo setor no sistema.  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="aaa445f52fc9aef62ad139bc837b11c3f" name="aaa445f52fc9aef62ad139bc837b11c3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa445f52fc9aef62ad139bc837b11c3f">&#9670;&#160;</a></span>cadastrarProduto()</h2>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="afa16352eafc40bf590c8563ed6b300c9" name="afa16352eafc40bf590c8563ed6b300c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa16352eafc40bf590c8563ed6b300c9">&#9670;&#160;</a></span>PRODUTO_OK</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int cadastrarProduto </td>
-          <td>(</td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>nome</em></span>[], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>quantidade</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>setor</em></span>[], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>preco</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cod_pdt</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se um produto esta sendo cadastrado corretamente. </p>
-<p>Esta funcao simula o cadastro de um produto.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nome</td><td>Nome do produto. </td></tr>
-    <tr><td class="paramname">quantidade</td><td>Quantidade do produto.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int Retorna 0 indicando produto cadastrado com sucesso. </dd></dl>
-
-</div>
-</div>
-<a id="aaada0eb5f5862e28ba6e8103cf7e309d" name="aaada0eb5f5862e28ba6e8103cf7e309d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaada0eb5f5862e28ba6e8103cf7e309d">&#9670;&#160;</a></span>cadastrarProdutoCodigoVazio()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int cadastrarProdutoCodigoVazio </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>codigo</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se o codigo do produto foi informado. </p>
-<p>Esta funcao simula o preenchimento incorreto do campo codigo com valor vazio (igual a 0).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">codigo</td><td>Codigo informado pelo usuario.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna 0 indicando codigo invalido. </dd></dl>
-
-</div>
-</div>
-<a id="ae39b7528b103c63cce0c967a6c808201" name="ae39b7528b103c63cce0c967a6c808201"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae39b7528b103c63cce0c967a6c808201">&#9670;&#160;</a></span>cadastrarProdutoEstoqueNegativo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int cadastrarProdutoEstoqueNegativo </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>estoque</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se a quantidade em estoque foi informada. </p>
-<p>Esta funcao simula o preenchimento incorreto do campo estoque com valor vazio (igual a 0).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">estoque</td><td>Quantidade em estoque informada pelo usuario.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna 0 indicando estoque invalido.</dd></dl>
-<p>Verifica se a quantidade em estoque é negativa.</p>
-<p>Esta funcao simula o preenchimento incorreto do campo estoque com um valor menor que zero.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">estoque</td><td>Quantidade em estoque informada pelo usuario.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna 0 indicando estoque invalido. </dd></dl>
-
-</div>
-</div>
-<a id="afc3f74d2e0aba3893fd2ac98a075b552" name="afc3f74d2e0aba3893fd2ac98a075b552"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc3f74d2e0aba3893fd2ac98a075b552">&#9670;&#160;</a></span>cadastrarProdutoEstoqueVazio()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int cadastrarProdutoEstoqueVazio </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>estoque</em></span></td><td>)</td>
-          <td></td>
+          <td class="memname">#define PRODUTO_OK&#160;&#160;&#160;2</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aa3f2a961cb477e425dfe2619aef57e56" name="aa3f2a961cb477e425dfe2619aef57e56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3f2a961cb477e425dfe2619aef57e56">&#9670;&#160;</a></span>cadastrarProdutoPrecoNegativo()</h2>
+<a id="a12952076901e5c7450278a0eac69e1cb" name="a12952076901e5c7450278a0eac69e1cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12952076901e5c7450278a0eac69e1cb">&#9670;&#160;</a></span>PRODUTO_PROXIMO</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int cadastrarProdutoPrecoNegativo </td>
-          <td>(</td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>preco</em></span></td><td>)</td>
-          <td></td>
+          <td class="memname">#define PRODUTO_PROXIMO&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Verifica se o produto pode ser cadastrado com um valor negativo. </p>
-<p>Esta funcao simula o preenchimento incorreto do campo preco com um valor menor que zero.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">preco</td><td>Preco informado pelo usuario.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna 0 indicando preco invalido. </dd></dl>
-
 </div>
 </div>
-<a id="ab6c9bd3ede503f38974bdcf0ef522297" name="ab6c9bd3ede503f38974bdcf0ef522297"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6c9bd3ede503f38974bdcf0ef522297">&#9670;&#160;</a></span>cadastrarProdutoPrecoVazio()</h2>
+<a id="a833f4d26585976b0350734e4eeff7689" name="a833f4d26585976b0350734e4eeff7689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a833f4d26585976b0350734e4eeff7689">&#9670;&#160;</a></span>PRODUTO_VENCIDO</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int cadastrarProdutoPrecoVazio </td>
-          <td>(</td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>preco</em></span></td><td>)</td>
-          <td></td>
+          <td class="memname">#define PRODUTO_VENCIDO&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Verifica se o preco do produto foi informado. </p>
-<p>Esta funcao simula o preenchimento incorreto do campo preco com valor vazio (igual a 0).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">preco</td><td>Preco informado pelo usuario.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna 0 indicando preco invalido. </dd></dl>
-
-</div>
-</div>
-<a id="a7e3f40e389324c0666f7ab62d08fb9ed" name="a7e3f40e389324c0666f7ab62d08fb9ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e3f40e389324c0666f7ab62d08fb9ed">&#9670;&#160;</a></span>cadastrarProdutoQuantidadeNaoNumerica()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int cadastrarProdutoQuantidadeNaoNumerica </td>
-          <td>(</td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>quantidade</em></span>[]</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se a quantidade do produto possui valor nao numerico. </p>
-<p>Esta funcao simula o preenchimento incorreto do campo quantidade com caracteres alfabeticos.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">quantidade</td><td>Quantidade informada pelo usuario.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna 0 indicando quantidade invalida. </dd></dl>
-
-</div>
-</div>
-<a id="a0f78e2d80cadf0a76c8cd1c2c08e1ed0" name="a0f78e2d80cadf0a76c8cd1c2c08e1ed0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f78e2d80cadf0a76c8cd1c2c08e1ed0">&#9670;&#160;</a></span>cadastrarProdutoQuantidadeNegativa()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int cadastrarProdutoQuantidadeNegativa </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>quantidade</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se um produto esta sendo cadastrado com quantidade invalida. </p>
-<p>Esta funcao simula o cadastro de um produto com quantidade em estoque negativa.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">quantidade</td><td>Quantidade em estoque do produto.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int Retorna 0 indicando quantidade invalida. </dd></dl>
-
-</div>
-</div>
-<a id="a79a8f3dc2e50509f7c1043fd85b7daf8" name="a79a8f3dc2e50509f7c1043fd85b7daf8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79a8f3dc2e50509f7c1043fd85b7daf8">&#9670;&#160;</a></span>cadastrarProdutoSemNome()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int cadastrarProdutoSemNome </td>
-          <td>(</td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>nome</em></span>[]</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se um produto esta sendo cadastrado incorretamente. </p>
-<p>Esta funcao simula o cadastro de um produto.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nome</td><td>Nome do produto.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int Retorna 0 indicando nome invalido. </dd></dl>
-
-</div>
-</div>
-<a id="a026c1bf7f220d60304a46b7b8b3d691d" name="a026c1bf7f220d60304a46b7b8b3d691d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a026c1bf7f220d60304a46b7b8b3d691d">&#9670;&#160;</a></span>cadastrarProdutoSemSetor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int cadastrarProdutoSemSetor </td>
-          <td>(</td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>setor</em></span>[]</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se o produto esta sendo cadastrado com o setor vazio. </p>
-<p>Esta funcao simula o preenchimento incorreto do campo "Setor armazenado", deixando-o vazio.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">setor</td><td>Setor do produto.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna 0 indicando setor invalido. </dd></dl>
-
-</div>
-</div>
-<a id="a34c969f50585fa7571d8d69839635c13" name="a34c969f50585fa7571d8d69839635c13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34c969f50585fa7571d8d69839635c13">&#9670;&#160;</a></span>cadastrarProdutoValidadeVazia()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int cadastrarProdutoValidadeVazia </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>validade</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se a validade do produto foi informada. </p>
-<p>Esta funcao simula o preenchimento incorreto do campo validade com valor vazio.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">validade</td><td>Data de validade informada pelo usuario.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna 0 indicando validade invalida. </dd></dl>
-
-</div>
-</div>
-<a id="aa2c83744c4dbdbb9945f793c762d6f78" name="aa2c83744c4dbdbb9945f793c762d6f78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2c83744c4dbdbb9945f793c762d6f78">&#9670;&#160;</a></span>produtoDentroValidade()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int produtoDentroValidade </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>diasParaVencer</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se um produto esta dentro da validade. </p>
-<p>Esta funcao simula a validacao de um produto que ainda pode ser comercializado normalmente.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">diasParaVencer</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int Retorna 3 indicando produto dentro da validade. </dd></dl>
-
-</div>
-</div>
-<a id="ae6e850a4eb98437c1d4f41da1508dfca" name="ae6e850a4eb98437c1d4f41da1508dfca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6e850a4eb98437c1d4f41da1508dfca">&#9670;&#160;</a></span>produtoProximoVencimento()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int produtoProximoVencimento </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>diasParaVencer</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se um produto esta proximo do vencimento. </p>
-<p>Esta funcao simula a situacao em que um produto esta proximo da data de vencimento e deve ser monitorado.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">diasParaVencer</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int Retorna 2 indicando produto proximo do vencimento. </dd></dl>
-
-</div>
-</div>
-<a id="aeead8bde599f4687df121eabfac5a8c5" name="aeead8bde599f4687df121eabfac5a8c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeead8bde599f4687df121eabfac5a8c5">&#9670;&#160;</a></span>produtoVencido()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int produtoVencido </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>diasParaVencer</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sistema para Mercado. </p>
-<p>Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao. </p><dl class="section author"><dt>Author</dt><dd>Felipe </dd></dl>
+<p>Sistema para estoque e controle de validade para Mercado. </p>
+<p>Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao. </p><dl class="section author"><dt>Authors</dt><dd>Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, Joao Guilherme </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026 </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.15.2</dd></dl>
-<p>Verifica se um produto esta vencido.</p>
-<p>Esta funcao simula a validacao de um produto vencido retornando o codigo correspondente ao status de vencimento.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">diasParaVencer</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int Retorna 1 indicando produto vencido. </dd></dl>
-
-</div>
-</div>
-<a id="a456f0ac01cf8252b2115740facfa4348" name="a456f0ac01cf8252b2115740facfa4348"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a456f0ac01cf8252b2115740facfa4348">&#9670;&#160;</a></span>validarCodigoProduto()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int validarCodigoProduto </td>
-          <td>(</td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>codigo</em></span>[]</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se o codigo do produto e composto apenas de numeros. </p>
-<p>Esta funcao simula o preenchimento do campo "codigo do produto" com caracteres invalidos.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">codigo</td><td>Codigo do produto.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna 0 indicando codigo invalido. </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>2.8.0 </dd></dl>
 
 </div>
 </div>

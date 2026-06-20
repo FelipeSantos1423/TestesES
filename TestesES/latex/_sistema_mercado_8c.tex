@@ -2,352 +2,65 @@
 \hypertarget{_sistema_mercado_8c}{}\label{_sistema_mercado_8c}\index{SistemaMercado.c@{SistemaMercado.c}}
 {\ttfamily \+\#include $<$stdio.\+h$>$}\newline
 {\ttfamily \+\#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{_sistema_mercado_8c_a833f4d26585976b0350734e4eeff7689}{PRODUTO\+\_\+\+VENCIDO}}~0
+\begin{DoxyCompactList}\small\item\em Sistema para estoque e controle de validade para Mercado. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{_sistema_mercado_8c_a12952076901e5c7450278a0eac69e1cb}{PRODUTO\+\_\+\+PROXIMO}}~1
+\item 
+\+\#define \doxymbox{\hyperlink{_sistema_mercado_8c_afa16352eafc40bf590c8563ed6b300c9}{PRODUTO\+\_\+\+OK}}~2
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_aeead8bde599f4687df121eabfac5a8c5}{produto\+Vencido}} (int dias\+Para\+Vencer)
-\begin{DoxyCompactList}\small\item\em Sistema para Mercado. \end{DoxyCompactList}\item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_ae6e850a4eb98437c1d4f41da1508dfca}{produto\+Proximo\+Vencimento}} (int dias\+Para\+Vencer)
-\begin{DoxyCompactList}\small\item\em Verifica se um produto esta proximo do vencimento. \end{DoxyCompactList}\item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_aa2c83744c4dbdbb9945f793c762d6f78}{produto\+Dentro\+Validade}} (int dias\+Para\+Vencer)
-\begin{DoxyCompactList}\small\item\em Verifica se um produto esta dentro da validade. \end{DoxyCompactList}\item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_aaa445f52fc9aef62ad139bc837b11c3f}{cadastrar\+Produto}} (char nome\+[$\,$]\+, int quantidade, char setor\+[$\,$]\+, float preco, int cod\+\_\+pdt)
-\begin{DoxyCompactList}\small\item\em Verifica se um produto esta sendo cadastrado corretamente. \end{DoxyCompactList}\item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_a79a8f3dc2e50509f7c1043fd85b7daf8}{cadastrar\+Produto\+Sem\+Nome}} (char nome\+[$\,$]\+)
-\begin{DoxyCompactList}\small\item\em Verifica se um produto esta sendo cadastrado incorretamente. \end{DoxyCompactList}\item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_a0f78e2d80cadf0a76c8cd1c2c08e1ed0}{cadastrar\+Produto\+Quantidade\+Negativa}} (int quantidade)
-\begin{DoxyCompactList}\small\item\em Verifica se um produto esta sendo cadastrado com quantidade invalida. \end{DoxyCompactList}\item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_a456f0ac01cf8252b2115740facfa4348}{validar\+Codigo\+Produto}} (char codigo\+[$\,$]\+)
-\begin{DoxyCompactList}\small\item\em Verifica se o codigo do produto e composto apenas de numeros. \end{DoxyCompactList}\item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_a026c1bf7f220d60304a46b7b8b3d691d}{cadastrar\+Produto\+Sem\+Setor}} (char setor\+[$\,$]\+)
-\begin{DoxyCompactList}\small\item\em Verifica se o produto esta sendo cadastrado com o setor vazio. \end{DoxyCompactList}\item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_a7e3f40e389324c0666f7ab62d08fb9ed}{cadastrar\+Produto\+Quantidade\+Nao\+Numerica}} (char quantidade\+[$\,$]\+)
-\begin{DoxyCompactList}\small\item\em Verifica se a quantidade do produto possui valor nao numerico. \end{DoxyCompactList}\item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_ab6c9bd3ede503f38974bdcf0ef522297}{cadastrar\+Produto\+Preco\+Vazio}} (float preco)
-\begin{DoxyCompactList}\small\item\em Verifica se o preco do produto foi informado. \end{DoxyCompactList}\item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_aa3f2a961cb477e425dfe2619aef57e56}{cadastrar\+Produto\+Preco\+Negativo}} (float preco)
-\begin{DoxyCompactList}\small\item\em Verifica se o produto pode ser cadastrado com um valor negativo. \end{DoxyCompactList}\item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_aaada0eb5f5862e28ba6e8103cf7e309d}{cadastrar\+Produto\+Codigo\+Vazio}} (int codigo)
-\begin{DoxyCompactList}\small\item\em Verifica se o codigo do produto foi informado. \end{DoxyCompactList}\item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_a34c969f50585fa7571d8d69839635c13}{cadastrar\+Produto\+Validade\+Vazia}} (int validade)
-\begin{DoxyCompactList}\small\item\em Verifica se a validade do produto foi informada. \end{DoxyCompactList}\item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_ae39b7528b103c63cce0c967a6c808201}{cadastrar\+Produto\+Estoque\+Negativo}} (int estoque)
-\begin{DoxyCompactList}\small\item\em Verifica se a quantidade em estoque foi informada. \end{DoxyCompactList}\item 
-int \doxymbox{\hyperlink{_sistema_mercado_8c_afc3f74d2e0aba3893fd2ac98a075b552}{cadastrar\+Produto\+Estoque\+Vazio}} (int estoque)
-\end{DoxyCompactItemize}
-
-
-\label{_sistema_mercado_8c_doc-func-members}
-\Hypertarget{_sistema_mercado_8c_doc-func-members}
-\doxysubsection{Function Documentation}
-\Hypertarget{_sistema_mercado_8c_aaa445f52fc9aef62ad139bc837b11c3f}\index{SistemaMercado.c@{SistemaMercado.c}!cadastrarProduto@{cadastrarProduto}}
-\index{cadastrarProduto@{cadastrarProduto}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{cadastrarProduto()}{cadastrarProduto()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_aaa445f52fc9aef62ad139bc837b11c3f} 
-int cadastrar\+Produto (\begin{DoxyParamCaption}\item[{char}]{nome}{\+[$\,$]\+, }\item[{int}]{quantidade}{, }\item[{char}]{setor}{\+[$\,$]\+, }\item[{float}]{preco}{, }\item[{int}]{cod\+\_\+pdt}{}\end{DoxyParamCaption})}
-
-
-
-Verifica se um produto esta sendo cadastrado corretamente. 
-
-Esta funcao simula o cadastro de um produto.
-
-
-\begin{DoxyParams}{Parameters}
-{\em nome} & Nome do produto. \\
-\hline
-{\em quantidade} & Quantidade do produto.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int Retorna 0 indicando produto cadastrado com sucesso. 
-\end{DoxyReturn}
-\Hypertarget{_sistema_mercado_8c_aaada0eb5f5862e28ba6e8103cf7e309d}\index{SistemaMercado.c@{SistemaMercado.c}!cadastrarProdutoCodigoVazio@{cadastrarProdutoCodigoVazio}}
-\index{cadastrarProdutoCodigoVazio@{cadastrarProdutoCodigoVazio}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{cadastrarProdutoCodigoVazio()}{cadastrarProdutoCodigoVazio()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_aaada0eb5f5862e28ba6e8103cf7e309d} 
-int cadastrar\+Produto\+Codigo\+Vazio (\begin{DoxyParamCaption}\item[{int}]{codigo}{}\end{DoxyParamCaption})}
-
-
-
-Verifica se o codigo do produto foi informado. 
-
-Esta funcao simula o preenchimento incorreto do campo codigo com valor vazio (igual a 0).
-
-
-\begin{DoxyParams}{Parameters}
-{\em codigo} & Codigo informado pelo usuario.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Retorna 0 indicando codigo invalido. 
-\end{DoxyReturn}
-\Hypertarget{_sistema_mercado_8c_ae39b7528b103c63cce0c967a6c808201}\index{SistemaMercado.c@{SistemaMercado.c}!cadastrarProdutoEstoqueNegativo@{cadastrarProdutoEstoqueNegativo}}
-\index{cadastrarProdutoEstoqueNegativo@{cadastrarProdutoEstoqueNegativo}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{cadastrarProdutoEstoqueNegativo()}{cadastrarProdutoEstoqueNegativo()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_ae39b7528b103c63cce0c967a6c808201} 
-int cadastrar\+Produto\+Estoque\+Negativo (\begin{DoxyParamCaption}\item[{int}]{estoque}{}\end{DoxyParamCaption})}
-
-
-
-Verifica se a quantidade em estoque foi informada. 
-
-Esta funcao simula o preenchimento incorreto do campo estoque com valor vazio (igual a 0).
-
-
-\begin{DoxyParams}{Parameters}
-{\em estoque} & Quantidade em estoque informada pelo usuario.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Retorna 0 indicando estoque invalido.
-\end{DoxyReturn}
-Verifica se a quantidade em estoque é negativa.
-
-Esta funcao simula o preenchimento incorreto do campo estoque com um valor menor que zero.
-
-
-\begin{DoxyParams}{Parameters}
-{\em estoque} & Quantidade em estoque informada pelo usuario.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Retorna 0 indicando estoque invalido. 
-\end{DoxyReturn}
-\Hypertarget{_sistema_mercado_8c_afc3f74d2e0aba3893fd2ac98a075b552}\index{SistemaMercado.c@{SistemaMercado.c}!cadastrarProdutoEstoqueVazio@{cadastrarProdutoEstoqueVazio}}
-\index{cadastrarProdutoEstoqueVazio@{cadastrarProdutoEstoqueVazio}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{cadastrarProdutoEstoqueVazio()}{cadastrarProdutoEstoqueVazio()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_afc3f74d2e0aba3893fd2ac98a075b552} 
-int cadastrar\+Produto\+Estoque\+Vazio (\begin{DoxyParamCaption}\item[{int}]{estoque}{}\end{DoxyParamCaption})}
-
-\Hypertarget{_sistema_mercado_8c_aa3f2a961cb477e425dfe2619aef57e56}\index{SistemaMercado.c@{SistemaMercado.c}!cadastrarProdutoPrecoNegativo@{cadastrarProdutoPrecoNegativo}}
-\index{cadastrarProdutoPrecoNegativo@{cadastrarProdutoPrecoNegativo}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{cadastrarProdutoPrecoNegativo()}{cadastrarProdutoPrecoNegativo()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_aa3f2a961cb477e425dfe2619aef57e56} 
-int cadastrar\+Produto\+Preco\+Negativo (\begin{DoxyParamCaption}\item[{float}]{preco}{}\end{DoxyParamCaption})}
-
-
-
-Verifica se o produto pode ser cadastrado com um valor negativo. 
-
-Esta funcao simula o preenchimento incorreto do campo preco com um valor menor que zero.
-
-
-\begin{DoxyParams}{Parameters}
-{\em preco} & Preco informado pelo usuario.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Retorna 0 indicando preco invalido. 
-\end{DoxyReturn}
-\Hypertarget{_sistema_mercado_8c_ab6c9bd3ede503f38974bdcf0ef522297}\index{SistemaMercado.c@{SistemaMercado.c}!cadastrarProdutoPrecoVazio@{cadastrarProdutoPrecoVazio}}
-\index{cadastrarProdutoPrecoVazio@{cadastrarProdutoPrecoVazio}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{cadastrarProdutoPrecoVazio()}{cadastrarProdutoPrecoVazio()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_ab6c9bd3ede503f38974bdcf0ef522297} 
-int cadastrar\+Produto\+Preco\+Vazio (\begin{DoxyParamCaption}\item[{float}]{preco}{}\end{DoxyParamCaption})}
-
-
-
-Verifica se o preco do produto foi informado. 
-
-Esta funcao simula o preenchimento incorreto do campo preco com valor vazio (igual a 0).
-
-
-\begin{DoxyParams}{Parameters}
-{\em preco} & Preco informado pelo usuario.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Retorna 0 indicando preco invalido. 
-\end{DoxyReturn}
-\Hypertarget{_sistema_mercado_8c_a7e3f40e389324c0666f7ab62d08fb9ed}\index{SistemaMercado.c@{SistemaMercado.c}!cadastrarProdutoQuantidadeNaoNumerica@{cadastrarProdutoQuantidadeNaoNumerica}}
-\index{cadastrarProdutoQuantidadeNaoNumerica@{cadastrarProdutoQuantidadeNaoNumerica}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{cadastrarProdutoQuantidadeNaoNumerica()}{cadastrarProdutoQuantidadeNaoNumerica()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_a7e3f40e389324c0666f7ab62d08fb9ed} 
-int cadastrar\+Produto\+Quantidade\+Nao\+Numerica (\begin{DoxyParamCaption}\item[{char}]{quantidade}{\+[$\,$]\+}\end{DoxyParamCaption})}
-
-
-
-Verifica se a quantidade do produto possui valor nao numerico. 
-
-Esta funcao simula o preenchimento incorreto do campo quantidade com caracteres alfabeticos.
-
-
-\begin{DoxyParams}{Parameters}
-{\em quantidade} & Quantidade informada pelo usuario.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Retorna 0 indicando quantidade invalida. 
-\end{DoxyReturn}
-\Hypertarget{_sistema_mercado_8c_a0f78e2d80cadf0a76c8cd1c2c08e1ed0}\index{SistemaMercado.c@{SistemaMercado.c}!cadastrarProdutoQuantidadeNegativa@{cadastrarProdutoQuantidadeNegativa}}
-\index{cadastrarProdutoQuantidadeNegativa@{cadastrarProdutoQuantidadeNegativa}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{cadastrarProdutoQuantidadeNegativa()}{cadastrarProdutoQuantidadeNegativa()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_a0f78e2d80cadf0a76c8cd1c2c08e1ed0} 
-int cadastrar\+Produto\+Quantidade\+Negativa (\begin{DoxyParamCaption}\item[{int}]{quantidade}{}\end{DoxyParamCaption})}
-
-
-
-Verifica se um produto esta sendo cadastrado com quantidade invalida. 
-
-Esta funcao simula o cadastro de um produto com quantidade em estoque negativa.
-
-
-\begin{DoxyParams}{Parameters}
-{\em quantidade} & Quantidade em estoque do produto.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int Retorna 0 indicando quantidade invalida. 
-\end{DoxyReturn}
-\Hypertarget{_sistema_mercado_8c_a79a8f3dc2e50509f7c1043fd85b7daf8}\index{SistemaMercado.c@{SistemaMercado.c}!cadastrarProdutoSemNome@{cadastrarProdutoSemNome}}
-\index{cadastrarProdutoSemNome@{cadastrarProdutoSemNome}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{cadastrarProdutoSemNome()}{cadastrarProdutoSemNome()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_a79a8f3dc2e50509f7c1043fd85b7daf8} 
-int cadastrar\+Produto\+Sem\+Nome (\begin{DoxyParamCaption}\item[{char}]{nome}{\+[$\,$]\+}\end{DoxyParamCaption})}
-
-
-
-Verifica se um produto esta sendo cadastrado incorretamente. 
-
-Esta funcao simula o cadastro de um produto.
-
-
-\begin{DoxyParams}{Parameters}
-{\em nome} & Nome do produto.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int Retorna 0 indicando nome invalido. 
-\end{DoxyReturn}
-\Hypertarget{_sistema_mercado_8c_a026c1bf7f220d60304a46b7b8b3d691d}\index{SistemaMercado.c@{SistemaMercado.c}!cadastrarProdutoSemSetor@{cadastrarProdutoSemSetor}}
-\index{cadastrarProdutoSemSetor@{cadastrarProdutoSemSetor}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{cadastrarProdutoSemSetor()}{cadastrarProdutoSemSetor()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_a026c1bf7f220d60304a46b7b8b3d691d} 
-int cadastrar\+Produto\+Sem\+Setor (\begin{DoxyParamCaption}\item[{char}]{setor}{\+[$\,$]\+}\end{DoxyParamCaption})}
-
-
-
-Verifica se o produto esta sendo cadastrado com o setor vazio. 
-
-Esta funcao simula o preenchimento incorreto do campo "{}\+Setor armazenado"{}, deixando-\/o vazio.
-
-
-\begin{DoxyParams}{Parameters}
-{\em setor} & Setor do produto.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Retorna 0 indicando setor invalido. 
-\end{DoxyReturn}
-\Hypertarget{_sistema_mercado_8c_a34c969f50585fa7571d8d69839635c13}\index{SistemaMercado.c@{SistemaMercado.c}!cadastrarProdutoValidadeVazia@{cadastrarProdutoValidadeVazia}}
-\index{cadastrarProdutoValidadeVazia@{cadastrarProdutoValidadeVazia}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{cadastrarProdutoValidadeVazia()}{cadastrarProdutoValidadeVazia()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_a34c969f50585fa7571d8d69839635c13} 
-int cadastrar\+Produto\+Validade\+Vazia (\begin{DoxyParamCaption}\item[{int}]{validade}{}\end{DoxyParamCaption})}
-
-
-
-Verifica se a validade do produto foi informada. 
-
-Esta funcao simula o preenchimento incorreto do campo validade com valor vazio.
-
-
-\begin{DoxyParams}{Parameters}
-{\em validade} & Data de validade informada pelo usuario.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Retorna 0 indicando validade invalida. 
-\end{DoxyReturn}
-\Hypertarget{_sistema_mercado_8c_aa2c83744c4dbdbb9945f793c762d6f78}\index{SistemaMercado.c@{SistemaMercado.c}!produtoDentroValidade@{produtoDentroValidade}}
-\index{produtoDentroValidade@{produtoDentroValidade}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{produtoDentroValidade()}{produtoDentroValidade()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_aa2c83744c4dbdbb9945f793c762d6f78} 
-int produto\+Dentro\+Validade (\begin{DoxyParamCaption}\item[{int}]{dias\+Para\+Vencer}{}\end{DoxyParamCaption})}
-
-
-
-Verifica se um produto esta dentro da validade. 
-
-Esta funcao simula a validacao de um produto que ainda pode ser comercializado normalmente.
-
-
-\begin{DoxyParams}{Parameters}
-{\em dias\+Para\+Vencer} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int Retorna 3 indicando produto dentro da validade. 
-\end{DoxyReturn}
-\Hypertarget{_sistema_mercado_8c_ae6e850a4eb98437c1d4f41da1508dfca}\index{SistemaMercado.c@{SistemaMercado.c}!produtoProximoVencimento@{produtoProximoVencimento}}
-\index{produtoProximoVencimento@{produtoProximoVencimento}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{produtoProximoVencimento()}{produtoProximoVencimento()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_ae6e850a4eb98437c1d4f41da1508dfca} 
-int produto\+Proximo\+Vencimento (\begin{DoxyParamCaption}\item[{int}]{dias\+Para\+Vencer}{}\end{DoxyParamCaption})}
-
-
-
-Verifica se um produto esta proximo do vencimento. 
-
-Esta funcao simula a situacao em que um produto esta proximo da data de vencimento e deve ser monitorado.
-
-
-\begin{DoxyParams}{Parameters}
-{\em dias\+Para\+Vencer} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int Retorna 2 indicando produto proximo do vencimento. 
-\end{DoxyReturn}
-\Hypertarget{_sistema_mercado_8c_aeead8bde599f4687df121eabfac5a8c5}\index{SistemaMercado.c@{SistemaMercado.c}!produtoVencido@{produtoVencido}}
-\index{produtoVencido@{produtoVencido}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{produtoVencido()}{produtoVencido()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_aeead8bde599f4687df121eabfac5a8c5} 
-int produto\+Vencido (\begin{DoxyParamCaption}\item[{int}]{dias\+Para\+Vencer}{}\end{DoxyParamCaption})}
-
-
-
-Sistema para Mercado. 
-
-Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao. \begin{DoxyAuthor}{Author}
-Felipe 
+int \doxymbox{\hyperlink{group___prototipos_gaaa445f52fc9aef62ad139bc837b11c3f}{cadastrar\+Produto}} (char nome\+[$\,$]\+, int quantidade, char setor\+[$\,$]\+, float preco, int cod\+\_\+pdt)
+\begin{DoxyCompactList}\small\item\em Cadastra um novo produto no sistema. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{group___prototipos_gac489f13b760e2bcc8417ce2cc149f2fe}{buscar\+Por\+Nome}} (char nome\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Busca um produto pelo nome. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{group___prototipos_ga850c880f0f78f516e98a73340962366d}{buscar\+Produto}} (char nome\+[$\,$]\+, char categoria\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Busca um produto pelo nome e categoria. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{group___prototipos_ga5d3c611004788b0e90719d3219d3f385}{verificar\+Validade}} (int dias\+Para\+Vencer)
+\begin{DoxyCompactList}\small\item\em Verifica o estado de validade de um produto. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{group___prototipos_gac7fe3bf6f716fe2c8d49891bb68b552e}{cadastrar\+Adm}} (char nome\+[$\,$]\+, char email\+[$\,$]\+, char senha\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Cadastra um novo administrador no sistema. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{group___prototipos_gaaae701564dc302e8f1fa084634a09b25}{login\+Adm}} (char email\+[$\,$]\+, char senha\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Realiza o login de um administrador no sistema. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{group___prototipos_gae169afcbe5004861402ea67ca0286c4a}{cadastrar\+Setor}} (char nome\+[$\,$]\+, char local\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Cadastra um novo setor no sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{_sistema_mercado_8c_doc-define-members}
+\Hypertarget{_sistema_mercado_8c_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_sistema_mercado_8c_afa16352eafc40bf590c8563ed6b300c9}\index{SistemaMercado.c@{SistemaMercado.c}!PRODUTO\_OK@{PRODUTO\_OK}}
+\index{PRODUTO\_OK@{PRODUTO\_OK}!SistemaMercado.c@{SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{PRODUTO\_OK}{PRODUTO\_OK}}
+{\footnotesize\ttfamily \label{_sistema_mercado_8c_afa16352eafc40bf590c8563ed6b300c9} 
+\+\#define PRODUTO\+\_\+\+OK~2}
+
+\Hypertarget{_sistema_mercado_8c_a12952076901e5c7450278a0eac69e1cb}\index{SistemaMercado.c@{SistemaMercado.c}!PRODUTO\_PROXIMO@{PRODUTO\_PROXIMO}}
+\index{PRODUTO\_PROXIMO@{PRODUTO\_PROXIMO}!SistemaMercado.c@{SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{PRODUTO\_PROXIMO}{PRODUTO\_PROXIMO}}
+{\footnotesize\ttfamily \label{_sistema_mercado_8c_a12952076901e5c7450278a0eac69e1cb} 
+\+\#define PRODUTO\+\_\+\+PROXIMO~1}
+
+\Hypertarget{_sistema_mercado_8c_a833f4d26585976b0350734e4eeff7689}\index{SistemaMercado.c@{SistemaMercado.c}!PRODUTO\_VENCIDO@{PRODUTO\_VENCIDO}}
+\index{PRODUTO\_VENCIDO@{PRODUTO\_VENCIDO}!SistemaMercado.c@{SistemaMercado.c}}
+\doxysubsubsection{\texorpdfstring{PRODUTO\_VENCIDO}{PRODUTO\_VENCIDO}}
+{\footnotesize\ttfamily \label{_sistema_mercado_8c_a833f4d26585976b0350734e4eeff7689} 
+\+\#define PRODUTO\+\_\+\+VENCIDO~0}
+
+
+
+Sistema para estoque e controle de validade para Mercado. 
+
+Este arquivo contem funcoes basicas para realizar teste de cadastro e verificacao. \begin{DoxyAuthor}{Authors}
+Felipe Santos, Henrique Santos, Henry Wilson, Igor Ramos, Joao Guilherme 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
 2026 
 \end{DoxyDate}
 \begin{DoxyVersion}{Version}
-1.\+15.\+2
+2.\+8.\+0 
 \end{DoxyVersion}
-Verifica se um produto esta vencido.
-
-Esta funcao simula a validacao de um produto vencido retornando o codigo correspondente ao status de vencimento.
-
-
-\begin{DoxyParams}{Parameters}
-{\em dias\+Para\+Vencer} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int Retorna 1 indicando produto vencido. 
-\end{DoxyReturn}
-\Hypertarget{_sistema_mercado_8c_a456f0ac01cf8252b2115740facfa4348}\index{SistemaMercado.c@{SistemaMercado.c}!validarCodigoProduto@{validarCodigoProduto}}
-\index{validarCodigoProduto@{validarCodigoProduto}!SistemaMercado.c@{SistemaMercado.c}}
-\doxysubsubsection{\texorpdfstring{validarCodigoProduto()}{validarCodigoProduto()}}
-{\footnotesize\ttfamily \label{_sistema_mercado_8c_a456f0ac01cf8252b2115740facfa4348} 
-int validar\+Codigo\+Produto (\begin{DoxyParamCaption}\item[{char}]{codigo}{\+[$\,$]\+}\end{DoxyParamCaption})}
-
-
-
-Verifica se o codigo do produto e composto apenas de numeros. 
-
-Esta funcao simula o preenchimento do campo "{}codigo do produto"{} com caracteres invalidos.
-
-
-\begin{DoxyParams}{Parameters}
-{\em codigo} & Codigo do produto.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Retorna 0 indicando codigo invalido. 
-\end{DoxyReturn}

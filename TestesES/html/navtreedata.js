@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "My Project", "index.html", [
+    [ "Topics", "topics.html", "topics" ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [

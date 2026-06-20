@@ -1,0 +1,218 @@
+\doxysection{Prototipos das Funcoes do Sistema }
+\hypertarget{group___prototipos}{}\label{group___prototipos}\index{Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}}
+
+
+Declaracoes das funcoes implementadas no sistema principal.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{group___prototipos_gaaa445f52fc9aef62ad139bc837b11c3f}{cadastrar\+Produto}} (char nome\+[$\,$]\+, int quantidade, char setor\+[$\,$]\+, float preco, int cod\+\_\+pdt)
+\begin{DoxyCompactList}\small\item\em Cadastra um novo produto no sistema. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{group___prototipos_gac489f13b760e2bcc8417ce2cc149f2fe}{buscar\+Por\+Nome}} (char nome\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Busca um produto pelo nome. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{group___prototipos_ga850c880f0f78f516e98a73340962366d}{buscar\+Produto}} (char nome\+[$\,$]\+, char categoria\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Busca um produto pelo nome e categoria. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{group___prototipos_ga5d3c611004788b0e90719d3219d3f385}{verificar\+Validade}} (int dias\+Para\+Vencer)
+\begin{DoxyCompactList}\small\item\em Verifica o estado de validade de um produto. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{group___prototipos_gac7fe3bf6f716fe2c8d49891bb68b552e}{cadastrar\+Adm}} (char nome\+[$\,$]\+, char email\+[$\,$]\+, char senha\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Cadastra um novo administrador no sistema. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{group___prototipos_gaaae701564dc302e8f1fa084634a09b25}{login\+Adm}} (char email\+[$\,$]\+, char senha\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Realiza o login de um administrador no sistema. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{group___prototipos_gae169afcbe5004861402ea67ca0286c4a}{cadastrar\+Setor}} (char nome\+[$\,$]\+, char local\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Cadastra um novo setor no sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaracoes das funcoes implementadas no sistema principal. 
+
+
+
+\label{group___prototipos_doc-func-members}
+\Hypertarget{group___prototipos_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{group___prototipos_gac489f13b760e2bcc8417ce2cc149f2fe}\index{Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}!buscarPorNome@{buscarPorNome}}
+\index{buscarPorNome@{buscarPorNome}!Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}}
+\doxysubsubsection{\texorpdfstring{buscarPorNome()}{buscarPorNome()}}
+{\footnotesize\ttfamily \label{group___prototipos_gac489f13b760e2bcc8417ce2cc149f2fe} 
+int buscar\+Por\+Nome (\begin{DoxyParamCaption}\item[{char}]{nome}{\+[$\,$]\+}\end{DoxyParamCaption})}
+
+
+
+Busca um produto pelo nome. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Nome do produto a ser buscado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se o produto for encontrado. 
+
+Valor diferente de 0 se o produto nao for encontrado. 
+\end{DoxyReturn}
+\Hypertarget{group___prototipos_ga850c880f0f78f516e98a73340962366d}\index{Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}!buscarProduto@{buscarProduto}}
+\index{buscarProduto@{buscarProduto}!Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}}
+\doxysubsubsection{\texorpdfstring{buscarProduto()}{buscarProduto()}}
+{\footnotesize\ttfamily \label{group___prototipos_ga850c880f0f78f516e98a73340962366d} 
+int buscar\+Produto (\begin{DoxyParamCaption}\item[{char}]{nome}{\+[$\,$]\+, }\item[{char}]{categoria}{\+[$\,$]\+}\end{DoxyParamCaption})}
+
+
+
+Busca um produto pelo nome e categoria. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Nome do produto a ser buscado. \\
+\hline
+{\em categoria} & Categoria (setor) do produto.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se o produto for encontrado. 
+
+Valor diferente de 0 se o produto nao for encontrado. 
+\end{DoxyReturn}
+\Hypertarget{group___prototipos_gac7fe3bf6f716fe2c8d49891bb68b552e}\index{Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}!cadastrarAdm@{cadastrarAdm}}
+\index{cadastrarAdm@{cadastrarAdm}!Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}}
+\doxysubsubsection{\texorpdfstring{cadastrarAdm()}{cadastrarAdm()}}
+{\footnotesize\ttfamily \label{group___prototipos_gac7fe3bf6f716fe2c8d49891bb68b552e} 
+int cadastrar\+Adm (\begin{DoxyParamCaption}\item[{char}]{nome}{\+[$\,$]\+, }\item[{char}]{email}{\+[$\,$]\+, }\item[{char}]{senha}{\+[$\,$]\+}\end{DoxyParamCaption})}
+
+
+
+Cadastra um novo administrador no sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Nome do administrador. Nao pode ser vazio nem conter numeros. \\
+\hline
+{\em email} & E-\/mail do administrador. Nao pode ser vazio. \\
+\hline
+{\em senha} & Senha do administrador. Nao pode ser vazia e deve ter no minimo 6 caracteres.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se o cadastro foi realizado com sucesso. 
+
+1 se o nome estiver vazio. 
+
+2 se o e-\/mail estiver vazio. 
+
+3 se a senha estiver vazia. 
+
+4 se a senha tiver menos de 6 caracteres. 
+
+5 se o nome contiver caracteres numericos. 
+\end{DoxyReturn}
+\Hypertarget{group___prototipos_gaaa445f52fc9aef62ad139bc837b11c3f}\index{Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}!cadastrarProduto@{cadastrarProduto}}
+\index{cadastrarProduto@{cadastrarProduto}!Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}}
+\doxysubsubsection{\texorpdfstring{cadastrarProduto()}{cadastrarProduto()}}
+{\footnotesize\ttfamily \label{group___prototipos_gaaa445f52fc9aef62ad139bc837b11c3f} 
+int cadastrar\+Produto (\begin{DoxyParamCaption}\item[{char}]{nome}{\+[$\,$]\+, }\item[{int}]{quantidade}{, }\item[{char}]{setor}{\+[$\,$]\+, }\item[{float}]{preco}{, }\item[{int}]{cod\+\_\+pdt}{}\end{DoxyParamCaption})}
+
+
+
+Cadastra um novo produto no sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Nome do produto. Nao pode ser vazio. \\
+\hline
+{\em quantidade} & Quantidade em estoque. Deve ser maior que zero. \\
+\hline
+{\em setor} & Setor onde o produto esta alocado. Nao pode ser vazio. \\
+\hline
+{\em preco} & Preco do produto. Deve ser maior que zero. \\
+\hline
+{\em cod\+\_\+pdt} & Codigo identificador do produto. Deve ser maior que zero.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se o cadastro foi realizado com sucesso. 
+
+1 se o nome estiver vazio. 
+
+2 se a quantidade for invalida (negativa). 
+
+3 se o setor estiver vazio. 
+
+4 se o preco for invalido (negativo). 
+
+5 se o codigo do produto for invalido (negativo). 
+\end{DoxyReturn}
+\Hypertarget{group___prototipos_gae169afcbe5004861402ea67ca0286c4a}\index{Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}!cadastrarSetor@{cadastrarSetor}}
+\index{cadastrarSetor@{cadastrarSetor}!Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}}
+\doxysubsubsection{\texorpdfstring{cadastrarSetor()}{cadastrarSetor()}}
+{\footnotesize\ttfamily \label{group___prototipos_gae169afcbe5004861402ea67ca0286c4a} 
+int cadastrar\+Setor (\begin{DoxyParamCaption}\item[{char}]{nome}{\+[$\,$]\+, }\item[{char}]{local}{\+[$\,$]\+}\end{DoxyParamCaption})}
+
+
+
+Cadastra um novo setor no sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Nome do setor. Não pode ser vazio. \\
+\hline
+{\em local} & Localização física do setor. Não pode ser vazia.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se o cadastro foi realizado com sucesso. 
+
+1 se o nome estiver vazio. 
+
+2 se o local estiver vazio. 
+\end{DoxyReturn}
+\Hypertarget{group___prototipos_gaaae701564dc302e8f1fa084634a09b25}\index{Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}!loginAdm@{loginAdm}}
+\index{loginAdm@{loginAdm}!Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}}
+\doxysubsubsection{\texorpdfstring{loginAdm()}{loginAdm()}}
+{\footnotesize\ttfamily \label{group___prototipos_gaaae701564dc302e8f1fa084634a09b25} 
+int login\+Adm (\begin{DoxyParamCaption}\item[{char}]{email}{\+[$\,$]\+, }\item[{char}]{senha}{\+[$\,$]\+}\end{DoxyParamCaption})}
+
+
+
+Realiza o login de um administrador no sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & E-\/mail do administrador. Nao pode ser vazio. \\
+\hline
+{\em senha} & Senha do administrador. Nao pode ser vazia.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se o login for realizado com sucesso. 
+
+1 se o e-\/mail estiver vazio. 
+
+2 se a senha estiver vazia. 
+
+3 se o e-\/mail nao for encontrado no sistema. 
+
+4 se a senha estiver incorreta. 
+\end{DoxyReturn}
+\Hypertarget{group___prototipos_ga5d3c611004788b0e90719d3219d3f385}\index{Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}!verificarValidade@{verificarValidade}}
+\index{verificarValidade@{verificarValidade}!Prototipos das Funcoes do Sistema@{Prototipos das Funcoes do Sistema}}
+\doxysubsubsection{\texorpdfstring{verificarValidade()}{verificarValidade()}}
+{\footnotesize\ttfamily \label{group___prototipos_ga5d3c611004788b0e90719d3219d3f385} 
+int verificar\+Validade (\begin{DoxyParamCaption}\item[{int}]{dias\+Para\+Vencer}{}\end{DoxyParamCaption})}
+
+
+
+Verifica o estado de validade de um produto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dias\+Para\+Vencer} & Numero de dias restantes ate o vencimento do produto. Valor 0 indica produto vencido no dia.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PRODUTO\+\_\+\+VENCIDO (0) se dias\+Para\+Vencer for igual a 0. 
+
+PRODUTO\+\_\+\+PROXIMO (1) se dias\+Para\+Vencer estiver entre 1 e 15 dias. 
+
+PRODUTO\+\_\+\+OK (2) se dias\+Para\+Vencer for maior que 15 dias. 
+\end{DoxyReturn}
